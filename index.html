@@ -3,102 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Personal Website</title>
+  <title>Weiyou | Personal Portfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --primary: #2c3e50;
+      --secondary: #3498db;
+      --light: #f4f4f4;
+      --dark: #1a252f;
+      --text: #333;
+    }
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
+      color: var(--text);
+      background: #fff;
     }
     header {
-      background: #2c3e50;
+      background: var(--primary);
       color: #fff;
-      padding: 20px 0;
+      padding: 60px 20px;
       text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #dcdcdc;
+    }
+    nav {
+      background: var(--dark);
+      padding: 10px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav ul {
       list-style: none;
-      padding: 0;
     }
     nav ul li {
       display: inline;
-      margin: 0 15px;
+      margin: 0 20px;
     }
     nav ul li a {
       color: #fff;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: var(--secondary);
     }
     section {
-      padding: 40px;
-      max-width: 900px;
+      padding: 60px 20px;
+      max-width: 1000px;
       margin: auto;
     }
-    h2 {
-      color: #2c3e50;
+    section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: var(--primary);
+      font-size: 2rem;
+    }
+    #about p {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
     .project {
-      background: #f4f4f4;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 5px;
+      background: var(--light);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+    }
+    .project h3 {
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+    .resume, .contact {
+      text-align: center;
+    }
+    .resume a, .contact a {
+      color: var(--secondary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .resume a:hover, .contact a:hover {
+      text-decoration: underline;
     }
     footer {
       text-align: center;
-      background: #2c3e50;
+      background: var(--dark);
       color: #fff;
       padding: 20px;
-      margin-top: 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Hi, I'm [Your Name]</h1>
-    <p>Welcome to my personal website</p>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <h1>Hi, I'm Weiyou</h1>
+    <p>Web Developer • Designer • Tech Enthusiast</p>
   </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>Write a short bio about yourself here. Who you are, what you do, and what you are passionate about.</p>
+    <p>I’m a passionate web developer with experience building modern, responsive websites and applications. I enjoy creating digital solutions that are clean, efficient, and user-friendly. In my free time, I love exploring new technologies and working on creative projects.</p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project">
-      <h3>Project Title 1</h3>
-      <p>Short description of what the project is about. You can link to GitHub or a live demo.</p>
-    </div>
-    <div class="project">
-      <h3>Project Title 2</h3>
-      <p>Another project description. Add images or screenshots if you like.</p>
+    <div class="projects">
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>A responsive portfolio site to showcase my work, built with HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="project">
+        <h3>Weather App</h3>
+        <p>A simple weather forecast app using an external API, styled with modern CSS techniques.</p>
+      </div>
+      <div class="project">
+        <h3>Task Manager</h3>
+        <p>A productivity tool to manage tasks efficiently, featuring local storage support.</p>
+      </div>
     </div>
   </section>
 
-  <section id="resume">
+  <section id="resume" class="resume">
     <h2>Resume</h2>
-    <p>Highlight your skills and experience. You can also provide a link to download your full resume in PDF.</p>
-    <p><a href="resume.pdf" target="_blank">Download Resume</a></p>
+    <p>Highlighting my skills and experience in software development, design, and problem-solving.</p>
+    <p><a href="resume.pdf" target="_blank">Download Resume (PDF)</a></p>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+    <p>GitHub: <a href="https://github.com/Weiyou" target="_blank">github.com/Weiyou</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Your Name. All rights reserved.</p>
+    <p>&copy; 2025 Weiyou. All rights reserved.</p>
   </footer>
 </body>
 </html>
