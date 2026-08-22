@@ -1,0 +1,341 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = "WEIYOU LI",
+	description = "Mathematics, research, photography and notes."
+} = Astro.props;
+---
+
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+		/>
+
+		<meta
+			name="description"
+			content={description}
+		/>
+
+		<title>{title}</title>
+	</head>
+
+	<body>
+
+		<!-- NAVBAR -->
+		<header class="header">
+
+			<a class="name" href="/">
+				WEIYOU LI
+			</a>
+
+			<nav>
+				<a href="/#about">About</a>
+
+				<a href="/#work">Work</a>
+
+				<a href="/photography">
+					Photography
+				</a>
+
+				<a href="/notes">
+					Notes
+				</a>
+			</nav>
+
+		</header>
+
+
+		<!-- PAGE CONTENT -->
+		<main>
+			<slot />
+		</main>
+
+
+		<!-- FOOTER -->
+		<footer>
+
+			<div class="footer-name">
+				WEIYOU LI
+			</div>
+
+			<div class="footer-links">
+
+				<a
+					href="#"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					GitHub
+				</a>
+
+				<a
+					href="#"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					LinkedIn
+				</a>
+
+				<a href="mailto:you@example.com">
+					Email
+				</a>
+
+			</div>
+
+			<div class="copyright">
+				© 2026
+			</div>
+
+		</footer>
+
+	</body>
+</html>
+
+
+<style is:global>
+
+	/* =========================
+	   GLOBAL VARIABLES
+	========================= */
+
+	:root {
+		--background: #f4f1ea;
+		--text: #111111;
+		--muted: #77736a;
+		--line: #c8c4bb;
+
+		--page-padding: 4vw;
+
+		--serif:
+			Georgia,
+			"Times New Roman",
+			serif;
+
+		--sans:
+			Arial,
+			Helvetica,
+			sans-serif;
+	}
+
+
+	/* =========================
+	   GLOBAL RESET
+	========================= */
+
+	* {
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+
+		background:
+			var(--background);
+
+		color:
+			var(--text);
+
+		font-family:
+			var(--sans);
+
+		font-size: 15px;
+
+		-webkit-font-smoothing:
+			antialiased;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	img {
+		display: block;
+		max-width: 100%;
+	}
+
+
+	/* =========================
+	   NAVIGATION
+	========================= */
+
+	.header {
+		width: 100%;
+
+		position: absolute;
+
+		top: 0;
+		left: 0;
+
+		z-index: 100;
+
+		display: flex;
+
+		align-items: center;
+
+		justify-content:
+			space-between;
+
+		padding:
+			30px
+			var(--page-padding);
+	}
+
+
+	.name {
+		font-size: 13px;
+
+		font-weight: 600;
+
+		letter-spacing:
+			0.12em;
+
+		text-transform:
+			uppercase;
+	}
+
+
+	.header nav {
+		display: flex;
+
+		align-items: center;
+
+		gap: 38px;
+	}
+
+
+	.header nav a {
+		font-size: 15px;
+
+		transition:
+			opacity
+			0.2s ease;
+	}
+
+
+	.header nav a:hover {
+		opacity: 0.45;
+	}
+
+
+	/* =========================
+	   FOOTER
+	========================= */
+
+	footer {
+		background:
+			#111111;
+
+		color:
+			#f4f1ea;
+
+		padding:
+			45px
+			var(--page-padding);
+
+		display: grid;
+
+		grid-template-columns:
+			1fr
+			1fr
+			1fr;
+
+		align-items: center;
+
+		font-size: 13px;
+	}
+
+
+	.footer-name {
+		font-weight: 600;
+
+		letter-spacing:
+			0.1em;
+	}
+
+
+	.footer-links {
+		display: flex;
+
+		justify-content:
+			center;
+
+		gap: 30px;
+	}
+
+
+	.footer-links a {
+		transition:
+			opacity
+			0.2s ease;
+	}
+
+
+	.footer-links a:hover {
+		opacity: 0.5;
+	}
+
+
+	.copyright {
+		text-align: right;
+	}
+
+
+	/* =========================
+	   MOBILE
+	========================= */
+
+	@media (max-width: 700px) {
+
+		.header {
+			align-items:
+				flex-start;
+		}
+
+
+		.header nav {
+			flex-direction:
+				column;
+
+			align-items:
+				flex-end;
+
+			gap: 8px;
+		}
+
+
+		footer {
+			grid-template-columns:
+				1fr;
+
+			gap: 25px;
+		}
+
+
+		.footer-links {
+			justify-content:
+				flex-start;
+		}
+
+
+		.copyright {
+			text-align: left;
+		}
+
+	}
+
+</style>

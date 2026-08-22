@@ -1,0 +1,739 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta
+			name="description"
+			content="Personal website — mathematics, research, photography and writing."
+		/>
+		<title>WEIYOU LI</title>
+	</head>
+
+	<body>
+
+		<header class="navbar">
+			<a class="logo" href="/">WEIYOU LI</a>
+
+			<nav>
+				<a href="#about">About</a>
+				<a href="#work">Work</a>
+				<a href="#photography">Photography</a>
+				<a href="#notes">Notes & Writing</a>
+			</nav>
+		</header>
+
+
+		<main>
+
+			<!-- HERO -->
+			<section class="hero">
+
+				<div class="hero-small">
+					<p>Mathematics · Statistics · Machine Learning</p>
+					<p>Canada — 2026</p>
+				</div>
+
+				<h1>
+					Where<br />
+					curiosity<br />
+					leads.
+				</h1>
+
+				<div class="hero-bottom">
+					<p>
+						A personal archive of my research,<br />
+						projects, writing and photography.
+					</p>
+
+					<a href="#work">Explore ↓</a>
+				</div>
+
+			</section>
+
+
+			<!-- ABOUT -->
+			<section id="about" class="section">
+
+				<div class="section-number">
+					01 — About
+				</div>
+
+				<div class="about-grid">
+
+					<h2>
+						I enjoy exploring problems
+						at the intersection of
+						mathematics and computation.
+					</h2>
+
+					<div class="about-text">
+						<p>
+							My work and interests span mathematics, statistics, machine learning, research, photography, and writing.
+							
+						</p>
+
+						<p>
+							I’m drawn to both technical and creative pursuits, and to the different perspectives they offer.
+						</p>
+					</div>
+
+				</div>
+
+			</section>
+
+
+			<!-- WORK -->
+			<section id="work" class="section">
+
+				<div class="section-number">
+					02 — Selected Work
+				</div>
+
+				<div class="work-list">
+
+					<a class="work-item" href="#">
+						<div>
+							<span>01</span>
+							<h3>Medical Imaging Research</h3>
+						</div>
+
+						<p>Machine Learning · Research</p>
+						<span>2026 ↗</span>
+					</a>
+
+
+					<a class="work-item" href="#">
+						<div>
+							<span>02</span>
+							<h3>Statistical Modelling</h3>
+						</div>
+
+						<p>Statistics · Data Analysis</p>
+						<span>2026 ↗</span>
+					</a>
+
+
+					<a class="work-item" href="#">
+						<div>
+							<span>03</span>
+							<h3>Beyond VaR</h3>
+						</div>
+
+						<p>Survival Analysis · ETFs · Quantitative Finance</p>
+						<span>2026 ↗</span>
+					</a>
+
+				</div>
+
+			</section>
+
+
+			<!-- PHOTOGRAPHY -->
+			<section id="photography" class="section">
+
+				<div class="section-number">
+					03 — Photography
+				</div>
+
+				<div class="photo-intro">
+					<h2>
+						Places, light<br />
+						and moments.
+					</h2>
+
+					<a href="/photography">View archive ↗</a>
+				</div>
+
+
+				<div class="photo-grid">
+
+					<div class="photo photo-large">
+						<span>Your photograph</span>
+					</div>
+
+					<div class="photo photo-portrait">
+						<span>Your photograph</span>
+					</div>
+
+					<div class="photo photo-wide">
+						<span>Your photograph</span>
+					</div>
+
+				</div>
+
+			</section>
+
+
+			<!-- NOTES & WRITING -->
+			<section id="notes" class="section">
+
+				<div class="section-number">
+					04 — Notes & Writing
+				</div>
+
+				<div class="writing-list">
+
+					<a href={`${base}notes/publications/`}>
+						<span>Publications</span>
+						<span>Research · Academic Work</span>
+						<span>↗</span>
+					</a>
+
+					<a href={`${base}notes/course-notes/`}>
+						<span>Course Notes</span>
+						<span>Mathematics · Statistics</span>
+						<span>↗</span>
+					</a>
+
+					<a href={`${base}notes/independent-writing/`}>
+						<span>Independent Writing</span>
+						<span>Projects · Essays · Ideas</span>
+						<span>↗</span>
+					</a>
+
+				</div>
+
+			</section>
+
+
+		</main>
+
+
+		<footer>
+
+			<div>
+				WEIYOU LI
+			</div>
+
+			<div>
+				<a href="#">GitHub</a>
+				<a href="#">LinkedIn</a>
+				<a href="mailto:you@example.com">Email</a>
+			</div>
+
+			<div>
+				© 2026
+			</div>
+
+		</footer>
+
+	</body>
+</html>
+
+
+<style>
+
+	/* -------------------------
+	   GLOBAL
+	-------------------------- */
+
+	* {
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+
+		background: #f2f0e9;
+		color: #111;
+
+		font-family:
+			Arial,
+			Helvetica,
+			sans-serif;
+
+		font-size: 15px;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+
+	/* -------------------------
+	   NAVIGATION
+	-------------------------- */
+
+	.navbar {
+		width: 100%;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		padding: 28px 4vw;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		z-index: 10;
+	}
+
+	.logo {
+		font-weight: 600;
+		letter-spacing: 0.08em;
+	}
+
+	nav {
+		display: flex;
+		gap: 32px;
+	}
+
+	nav a {
+		transition: opacity 0.2s ease;
+	}
+
+	nav a:hover {
+		opacity: 0.45;
+	}
+
+
+	/* -------------------------
+	   HERO
+	-------------------------- */
+
+	.hero {
+		min-height: 100vh;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		padding:
+			130px
+			4vw
+			50px;
+	}
+
+	.hero-small {
+		display: flex;
+		justify-content: space-between;
+
+		text-transform: uppercase;
+
+		font-size: 11px;
+		letter-spacing: 0.12em;
+
+		margin-bottom: 35px;
+	}
+
+	.hero h1 {
+		font-family: var(--serif);
+
+		font-size: clamp(
+			70px,
+			10vw,
+			165px
+		);
+
+		font-weight: 400;
+
+		letter-spacing: -0.055em;
+
+		line-height: 0.9;
+
+		margin: 0;
+	}
+
+	.hero-bottom {
+		margin-top: auto;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+
+		line-height: 1.5;
+	}
+
+
+	/* -------------------------
+	   GENERAL SECTION
+	-------------------------- */
+
+	.section {
+		padding:
+			100px
+			4vw
+			140px;
+
+		border-top: 1px solid #aaa69c;
+	}
+
+	.section-number {
+		text-transform: uppercase;
+
+		letter-spacing: 0.1em;
+
+		font-size: 11px;
+
+		margin-bottom: 90px;
+	}
+
+
+	/* -------------------------
+	   ABOUT
+	-------------------------- */
+
+	.about-grid {
+		display: grid;
+
+		grid-template-columns:
+			2fr
+			1fr;
+
+		gap: 12vw;
+	}
+
+	.about-grid h2 {
+		font-family:
+			Georgia,
+			serif;
+
+		font-size:
+			clamp(
+				42px,
+				5vw,
+				80px
+			);
+
+		font-weight: 400;
+
+		line-height: 1;
+
+		letter-spacing: -0.04em;
+
+		margin: 0;
+	}
+
+	.about-text {
+		font-size: 17px;
+
+		line-height: 1.6;
+
+		max-width: 430px;
+	}
+
+
+	/* -------------------------
+	   WORK
+	-------------------------- */
+
+	.work-list {
+		border-top:
+			1px solid
+			#aaa69c;
+	}
+
+	.work-item {
+		display: grid;
+
+		grid-template-columns:
+			2fr
+			1fr
+			auto;
+
+		align-items: center;
+
+		gap: 30px;
+
+		padding: 35px 0;
+
+		border-bottom:
+			1px solid
+			#aaa69c;
+
+		transition:
+			padding 0.3s ease;
+	}
+
+	.work-item:hover {
+		padding-left: 20px;
+	}
+
+	.work-item > div {
+		display: flex;
+		align-items: center;
+
+		gap: 40px;
+	}
+
+	.work-item h3 {
+		font-family:
+			Georgia,
+			serif;
+
+		font-size: 35px;
+
+		font-weight: 400;
+
+		margin: 0;
+	}
+
+
+	/* -------------------------
+	   PHOTOGRAPHY
+	-------------------------- */
+
+	.photo-intro {
+		display: flex;
+
+		align-items: flex-end;
+
+		justify-content:
+			space-between;
+
+		margin-bottom: 80px;
+	}
+
+	.photo-intro h2 {
+		font-family:
+			Georgia,
+			serif;
+
+		font-size:
+			clamp(
+				60px,
+				8vw,
+				120px
+			);
+
+		font-weight: 400;
+
+		letter-spacing:
+			-0.055em;
+
+		line-height: 0.85;
+
+		margin: 0;
+	}
+
+
+	.photo-grid {
+		display: grid;
+
+		grid-template-columns:
+			repeat(
+				12,
+				1fr
+			);
+
+		gap: 20px;
+	}
+
+
+	.photo {
+		background:
+			#d1cec5;
+
+		display: flex;
+
+		align-items: center;
+
+		justify-content: center;
+
+		color: #777;
+
+		font-size: 12px;
+
+		overflow: hidden;
+	}
+
+
+	.photo img {
+		width: 100%;
+		height: 100%;
+
+		object-fit: cover;
+
+		transition:
+			transform
+			0.6s ease;
+	}
+
+	.photo:hover img {
+		transform:
+			scale(1.025);
+	}
+
+
+	.photo-large {
+		grid-column:
+			1 / 8;
+
+		aspect-ratio:
+			4 / 3;
+	}
+
+	.photo-portrait {
+		grid-column:
+			9 / 13;
+
+		margin-top: 150px;
+
+		aspect-ratio:
+			3 / 4;
+	}
+
+	.photo-wide {
+		grid-column:
+			3 / 11;
+
+		margin-top: 80px;
+
+		aspect-ratio:
+			16 / 9;
+	}
+
+
+	/* -------------------------
+	   WRITING
+	-------------------------- */
+
+	.writing-list {
+		border-top:
+			1px solid
+			#aaa69c;
+	}
+
+	.writing-list a {
+		display: grid;
+
+		grid-template-columns:
+			2fr
+			1fr
+			auto;
+
+		gap: 30px;
+
+		padding: 30px 0;
+
+		border-bottom:
+			1px solid
+			#aaa69c;
+
+		transition:
+			padding 0.3s ease;
+	}
+
+	.writing-list a:hover {
+		padding-left: 20px;
+	}
+
+
+	/* -------------------------
+	   FOOTER
+	-------------------------- */
+
+	footer {
+		padding:
+			40px
+			4vw;
+
+		background:
+			#111;
+
+		color:
+			#f2f0e9;
+
+		display: flex;
+
+		justify-content:
+			space-between;
+
+		align-items:
+			center;
+	}
+
+	footer div:nth-child(2) {
+		display: flex;
+
+		gap: 25px;
+	}
+
+
+	/* -------------------------
+	   MOBILE
+	-------------------------- */
+
+	@media (
+		max-width: 800px
+	) {
+
+		.navbar {
+			align-items:
+				flex-start;
+		}
+
+		nav {
+			flex-direction:
+				column;
+
+			gap:
+				8px;
+		}
+
+		.hero h1 {
+			font-size:
+				18vw;
+		}
+
+		.about-grid {
+			grid-template-columns:
+				1fr;
+
+			gap:
+				50px;
+		}
+
+		.work-item {
+			grid-template-columns:
+				1fr;
+		}
+
+		.photo-large {
+			grid-column:
+				1 / 10;
+		}
+
+		.photo-portrait {
+			grid-column:
+				5 / 13;
+
+			margin-top:
+				40px;
+		}
+
+		.photo-wide {
+			grid-column:
+				1 / 13;
+		}
+
+		.writing-list a {
+			grid-template-columns:
+				1fr;
+		}
+
+		footer {
+			flex-direction:
+				column;
+
+			align-items:
+				flex-start;
+
+			gap:
+				30px;
+		}
+	}
+
+</style>
