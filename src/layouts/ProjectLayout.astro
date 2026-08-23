@@ -1,0 +1,551 @@
+---
+interface Props {
+	title: string;
+	category: string;
+	summary: string;
+	year?: string;
+}
+
+const {
+	title,
+	category,
+	summary,
+	year = "2026",
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8" />
+
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1"
+	/>
+
+	<meta
+		name="description"
+		content={summary}
+	/>
+
+	<title>{title} — Weiyou Li</title>
+
+</head>
+
+
+<body>
+
+	<header class="navbar">
+
+		<a
+			class="logo"
+			href={base}
+		>
+			WEIYOU LI
+		</a>
+
+
+		<nav>
+
+			<a href={`${base}#about`}>
+				About
+			</a>
+
+			<a href={`${base}#work`}>
+				Work
+			</a>
+
+			<a href={`${base}photography/`}>
+				Photography
+			</a>
+
+			<a href={`${base}#notes`}>
+				Notes & Writing
+			</a>
+
+		</nav>
+
+	</header>
+
+
+
+	<main>
+
+		<section class="project-hero">
+
+			<div class="project-meta">
+
+				<p>
+					{category}
+				</p>
+
+				<p>
+					{year}
+				</p>
+
+			</div>
+
+
+			<h1>
+				{title}
+			</h1>
+
+
+			<div class="project-hero-bottom">
+
+				<p>
+					{summary}
+				</p>
+
+				<a href="#project">
+					Explore ↓
+				</a>
+
+			</div>
+
+		</section>
+
+
+		<section
+			id="project"
+			class="project-content"
+		>
+
+			<slot />
+
+		</section>
+
+	</main>
+
+
+
+	<footer>
+
+		<div>
+			WEIYOU LI
+		</div>
+
+		<div class="footer-links">
+
+			<a
+				href="https://github.com/Shercroft"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				GitHub
+			</a>
+
+			<a href="#">
+				LinkedIn
+			</a>
+
+			<a href="miloliwy@gmail.com">
+				Email
+			</a>
+
+		</div>
+
+		<div>
+			© 2026
+		</div>
+
+	</footer>
+
+</body>
+
+</html>
+
+
+<style is:global>
+
+	:root {
+		--background: #f2f0e9;
+		--text: #111;
+		--muted: #666;
+		--line: #aaa69c;
+
+		--serif:
+			Georgia,
+			"Times New Roman",
+			serif;
+	}
+
+
+	* {
+		box-sizing: border-box;
+	}
+
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+
+	body {
+		margin: 0;
+
+		background: var(--background);
+		color: var(--text);
+
+		font-family:
+			Arial,
+			Helvetica,
+			sans-serif;
+
+		font-size: 15px;
+	}
+
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+
+	/* NAV */
+
+	.navbar {
+		position: absolute;
+
+		top: 0;
+		left: 0;
+
+		width: 100%;
+
+		display: flex;
+
+		align-items: center;
+
+		justify-content: space-between;
+
+		padding:
+			28px
+			4vw;
+
+		z-index: 20;
+	}
+
+
+	.logo {
+		font-weight: 600;
+
+		letter-spacing: 0.08em;
+	}
+
+
+	nav {
+		display: flex;
+
+		gap: 32px;
+	}
+
+
+	nav a {
+		transition: opacity 0.2s ease;
+	}
+
+
+	nav a:hover {
+		opacity: 0.45;
+	}
+
+
+	/* HERO */
+
+	.project-hero {
+		min-height: 100vh;
+
+		display: flex;
+
+		flex-direction: column;
+
+		justify-content: center;
+
+		padding:
+			135px
+			4vw
+			50px;
+	}
+
+
+	.project-meta {
+		display: flex;
+
+		justify-content: space-between;
+
+		text-transform: uppercase;
+
+		font-size: 11px;
+
+		letter-spacing: 0.12em;
+
+		margin-bottom: 40px;
+	}
+
+
+	.project-hero h1 {
+		max-width: 1400px;
+
+		font-family: var(--serif);
+
+		font-size:
+			clamp(
+				65px,
+				9vw,
+				145px
+			);
+
+		font-weight: 400;
+
+		line-height: 0.9;
+
+		letter-spacing: -0.055em;
+
+		margin: 0;
+	}
+
+
+	.project-hero-bottom {
+		margin-top: auto;
+
+		display: flex;
+
+		align-items: flex-end;
+
+		justify-content: space-between;
+	}
+
+
+	.project-hero-bottom p {
+		max-width: 470px;
+
+		line-height: 1.55;
+	}
+
+
+	/* PROJECT BODY */
+
+	.project-content {
+		border-top:
+			1px solid
+			var(--line);
+
+		padding:
+			0
+			4vw
+			140px;
+	}
+
+
+	.project-block {
+		display: grid;
+
+		grid-template-columns:
+			220px
+			1fr;
+
+		gap: 70px;
+
+		padding:
+			90px
+			0;
+
+		border-bottom:
+			1px solid
+			var(--line);
+	}
+
+
+	.project-label {
+		font-size: 11px;
+
+		text-transform: uppercase;
+
+		letter-spacing: 0.1em;
+	}
+
+
+	.project-main {
+		max-width: 1000px;
+	}
+
+
+	.project-main h2 {
+		font-family: var(--serif);
+
+		font-size:
+			clamp(
+				38px,
+				5vw,
+				70px
+			);
+
+		font-weight: 400;
+
+		line-height: 1;
+
+		letter-spacing: -0.04em;
+
+		margin:
+			0
+			0
+			35px;
+	}
+
+
+	.project-main p {
+		max-width: 760px;
+
+		font-size: 17px;
+
+		line-height: 1.7;
+
+		margin:
+			0
+			0
+			24px;
+	}
+
+
+	.project-main ul {
+		max-width: 760px;
+
+		margin:
+			25px
+			0
+			0;
+
+		padding-left: 20px;
+
+		font-size: 16px;
+
+		line-height: 1.8;
+	}
+
+
+	.project-tags {
+		display: flex;
+
+		flex-wrap: wrap;
+
+		gap: 10px;
+
+		margin-top: 35px;
+	}
+
+
+	.project-tags span {
+		border:
+			1px solid
+			var(--line);
+
+		border-radius: 999px;
+
+		padding:
+			8px
+			14px;
+
+		font-size: 12px;
+	}
+
+
+	.project-links {
+		display: flex;
+
+		flex-wrap: wrap;
+
+		gap: 30px;
+
+		margin-top: 40px;
+	}
+
+
+	.project-links a {
+		padding-bottom: 4px;
+
+		border-bottom:
+			1px solid
+			#111;
+
+		transition: opacity 0.2s ease;
+	}
+
+
+	.project-links a:hover {
+		opacity: 0.45;
+	}
+
+
+	/* FOOTER */
+
+	footer {
+		display: flex;
+
+		align-items: center;
+
+		justify-content: space-between;
+
+		padding:
+			40px
+			4vw;
+
+		background: #111;
+
+		color: #f2f0e9;
+	}
+
+
+	.footer-links {
+		display: flex;
+
+		gap: 25px;
+	}
+
+
+	/* MOBILE */
+
+	@media (max-width: 800px) {
+
+		.navbar {
+			align-items: flex-start;
+		}
+
+
+		nav {
+			flex-direction: column;
+
+			align-items: flex-end;
+
+			gap: 8px;
+		}
+
+
+		.project-hero h1 {
+			font-size: 16vw;
+		}
+
+
+		.project-block {
+			grid-template-columns: 1fr;
+
+			gap: 25px;
+		}
+
+
+		footer {
+			flex-direction: column;
+
+			align-items: flex-start;
+
+			gap: 30px;
+		}
+
+	}
+
+</style>

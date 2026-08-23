@@ -22,7 +22,7 @@ const base = import.meta.env.BASE_URL;
 			<nav>
 				<a href="#about">About</a>
 				<a href="#work">Work</a>
-				<a href="#photography">Photography</a>
+				<a href={`${base}photography/`}>Photography</a>
 				<a href="#notes">Notes & Writing</a>
 			</nav>
 		</header>
@@ -33,24 +33,35 @@ const base = import.meta.env.BASE_URL;
 			<!-- HERO -->
 			<section class="hero">
 
-				<div class="hero-small">
-					<p>Mathematics · Statistics · Machine Learning</p>
-					<p>Canada — 2026</p>
+				<div class="hero-copy">
+
+					<div class="hero-small">
+						<p class="site-type">Personal Website of Weiyou Li</p>
+					</div>
+
+					<h1>
+						Where<br />
+						curiosity<br />
+						leads.
+					</h1>
+
+					<div class="hero-bottom">
+						<p>
+							A collection of my research,<br />
+							projects, notes and photography.
+						</p>
+
+						<a href="#work">Explore ↓</a>
+					</div>
+
 				</div>
 
-				<h1>
-					Where<br />
-					curiosity<br />
-					leads.
-				</h1>
 
-				<div class="hero-bottom">
-					<p>
-						A personal archive of my research,<br />
-						projects, writing and photography.
-					</p>
-
-					<a href="#work">Explore ↓</a>
+				<div class="hero-visual">
+					<img
+						src={`${base}images/hero/curiosity-hero.jpg`}
+						alt="Hero image"
+					/>
 				</div>
 
 			</section>
@@ -96,7 +107,10 @@ const base = import.meta.env.BASE_URL;
 
 				<div class="work-list">
 
-					<a class="work-item" href="#">
+					<a
+						class="work-item"
+						href={`${base}work/medical-imaging/`}
+					>
 						<div>
 							<span>01</span>
 							<h3>Medical Imaging Research</h3>
@@ -107,24 +121,30 @@ const base = import.meta.env.BASE_URL;
 					</a>
 
 
-					<a class="work-item" href="#">
+					<a
+						class="work-item"
+						href={`${base}work/graduate-admission/`}
+					>
 						<div>
 							<span>02</span>
-							<h3>Statistical Modelling</h3>
+							<h3>Graduate Admission Modeling</h3>
 						</div>
 
-						<p>Statistics · Data Analysis</p>
+						<p>Statistics · Neural Networks · Regression</p>
 						<span>2026 ↗</span>
 					</a>
 
 
-					<a class="work-item" href="#">
+					<a
+						class="work-item"
+						href={`${base}work/beyond-var/`}
+					>
 						<div>
 							<span>03</span>
 							<h3>Beyond VaR</h3>
 						</div>
 
-						<p>Survival Analysis · ETFs · Quantitative Finance</p>
+						<p>Survival Analysis · Quantitative Finance</p>
 						<span>2026 ↗</span>
 					</a>
 
@@ -146,7 +166,7 @@ const base = import.meta.env.BASE_URL;
 						and moments.
 					</h2>
 
-					<a href="/photography">View archive ↗</a>
+					<a href={`${base}photography/`}>View archive ↗</a>
 				</div>
 
 
@@ -187,8 +207,8 @@ const base = import.meta.env.BASE_URL;
 
 				<div class="writing-list">
 
-					<a href={`${base}notes/publications/`}>
-						<span>Publications</span>
+					<a href={`${base}notes/preprint/`}>
+						<span>Preprint</span>
 						<span>Research · Academic Work</span>
 						<span>↗</span>
 					</a>
@@ -220,9 +240,25 @@ const base = import.meta.env.BASE_URL;
 			</div>
 
 			<div>
-				<a href="#">GitHub</a>
-				<a href="#">LinkedIn</a>
-				<a href="mailto:you@example.com">Email</a>
+				<a
+					href="https://github.com/Shercroft"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					GitHub
+				</a>
+
+				<a
+					href="https://www.linkedin.com/in/weiyou-li-032426252/"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					LinkedIn
+				</a>
+
+				<a href="mailto:miloliwy@gmail.com">
+					Email
+				</a>
 			</div>
 
 			<div>
@@ -252,7 +288,27 @@ const base = import.meta.env.BASE_URL;
 	body {
 		margin: 0;
 
-		background: #f2f0e9;
+		background:
+			radial-gradient(
+				circle at 82% 18%,
+				rgba(210, 183, 145, 0.18) 0%,
+				transparent 28%
+			),
+
+			radial-gradient(
+				circle at 18% 72%,
+				rgba(120, 155, 185, 0.28) 0%,
+				transparent 36%
+			),
+
+			linear-gradient(
+				145deg,
+				#f3eee4 0%,
+				#e9edf0 35%,
+				#d6e2e9 68%,
+				#c3d3df 100%
+			);
+
 		color: #111;
 
 		font-family:
@@ -261,6 +317,30 @@ const base = import.meta.env.BASE_URL;
 			sans-serif;
 
 		font-size: 15px;
+	}
+
+	
+
+	body::before {
+		content: "";
+		position: fixed;
+		inset: 0;
+
+		pointer-events: none;
+		z-index: 9999;
+
+		opacity: 0.18;
+
+		background-image:
+			repeating-radial-gradient(
+				circle at 0 0,
+				rgba(0, 0, 0, 0.035) 0,
+				rgba(0, 0, 0, 0.035) 0.6px,
+				transparent 0.7px,
+				transparent 3px
+			);
+
+		mix-blend-mode: multiply;
 	}
 
 	a {
@@ -315,9 +395,10 @@ const base = import.meta.env.BASE_URL;
 	.hero {
 		min-height: 100vh;
 
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		display: grid;
+		grid-template-columns: 1.08fr 0.92fr;
+		gap: 4vw;
+		align-items: stretch;
 
 		padding:
 			130px
@@ -325,31 +406,43 @@ const base = import.meta.env.BASE_URL;
 			50px;
 	}
 
-	.hero-small {
+	.hero-copy {
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		min-height: calc(100vh - 180px);
+	}
 
-		text-transform: uppercase;
-
-		font-size: 11px;
-		letter-spacing: 0.12em;
-
+	.hero-small {
 		margin-bottom: 35px;
 	}
 
-	.hero h1 {
-		font-family: var(--serif);
+	.site-type {
+		margin: 0;
 
-		font-size: clamp(
-			70px,
-			10vw,
-			165px
-		);
+		font-family: Georgia, "Times New Roman", serif;
+
+		font-size: clamp(24px, 2vw, 36px);
 
 		font-weight: 400;
 
-		letter-spacing: -0.055em;
+		letter-spacing: -0.025em;
 
+		line-height: 1.1;
+	}
+
+	.hero h1 {
+		font-family:
+			Georgia,
+			serif;
+
+		font-size: clamp(
+			72px,
+			9vw,
+			160px
+		);
+
+		font-weight: 400;
+		letter-spacing: -0.055em;
 		line-height: 0.9;
 
 		margin: 0;
@@ -363,8 +456,26 @@ const base = import.meta.env.BASE_URL;
 		align-items: flex-end;
 
 		line-height: 1.5;
+		gap: 30px;
 	}
 
+	.hero-bottom p {
+		margin: 0;
+		max-width: 320px;
+	}
+
+	.hero-visual {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hero-visual img {
+		width: 100%;
+		height: min(78vh, 820px);
+		object-fit: cover;
+		display: block;
+	}
 
 	/* -------------------------
 	   GENERAL SECTION
@@ -445,6 +556,8 @@ const base = import.meta.env.BASE_URL;
 	}
 
 	.work-item {
+		position: relative;
+
 		display: grid;
 
 		grid-template-columns:
@@ -456,14 +569,51 @@ const base = import.meta.env.BASE_URL;
 
 		gap: 30px;
 
-		padding: 35px 0;
+		padding: 35px 18px;
 
-		border-bottom:
-			1px solid
-			#aaa69c;
+		margin: 0 -18px;
+
+		border-bottom: 1px solid #aaa69c;
+
+		overflow: hidden;
 
 		transition:
-			padding 0.3s ease;
+			padding-left 0.35s ease,
+			color 0.35s ease;
+	}
+
+	.work-item::before {
+		content: "";
+
+		position: absolute;
+		inset: 0;
+
+		background:
+			linear-gradient(
+				90deg,
+				rgba(205, 196, 177, 0.28),
+				rgba(227, 222, 209, 0.12)
+			);
+
+		transform: scaleX(0);
+		transform-origin: left;
+
+		transition: transform 0.45s ease;
+
+		z-index: 0;
+	}
+
+	.work-item > * {
+		position: relative;
+		z-index: 1;
+	}
+
+	.work-item:hover::before {
+		transform: scaleX(1);
+	}
+
+	.work-item:hover {
+		padding-left: 32px;
 	}
 
 	.work-item:hover {
@@ -695,6 +845,19 @@ const base = import.meta.env.BASE_URL;
 		.hero h1 {
 			font-size:
 				18vw;
+		}
+
+		.hero {
+			grid-template-columns: 1fr;
+			gap: 35px;
+		}
+
+		.hero-copy {
+			min-height: auto;
+		}
+
+		.hero-visual img {
+			height: 420px;
 		}
 
 		.about-grid {

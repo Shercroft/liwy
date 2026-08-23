@@ -1,42 +1,1375 @@
 ---
+const base = import.meta.env.BASE_URL;
+
+const photoFiles = [
+	"IMG_2828.JPEG",
+	"IMG_2822.JPEG",
+	"IMG_1957.JPEG",
+	"IMG_1956.JPEG",
+	"IMG_7800.JPEG",
+	"IMG_0628.JPEG",
+	"IMG_1167.JPG",
+	"IMG_1191.JPEG",
+	"IMG_1888.JPEG",
+	"IMG_3094.JPEG",
+	"IMG_3588.JPEG",
+	"IMG_3663.JPEG",
+	"IMG_3760.JPEG",
+	"IMG_5844.JPEG",
+	"IMG_6079.JPEG",
+	"IMG_6674.JPG",
+	"IMG_6869.JPG",
+	"IMG_6924.JPEG",
+	"IMG_7070.JPEG",
+	"IMG_7093.JPEG",
+	"IMG_7773.JPEG",
+	"IMG_8334.JPEG",
+	"IMG_9565.JPEG",
+	"IMG_9639.JPEG",
+	"IMG_0524.JPEG",
+	"IMG_0530.JPEG",
+	"IMG_2603.JPEG",
+];
+
+const photos = photoFiles.map((src) => ({
+	src,
+	alt: "Photography by Weiyou Li",
+	location: "",
+	year: "",
+}));
 ---
 
+<!doctype html>
+
 <html lang="en">
+
 	<head>
+
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Photography</title>
+
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+		/>
+
+		<meta
+			name="description"
+			content="Photography by Weiyou Li"
+		/>
+
+		<title>Photography — Weiyou Li</title>
+
 	</head>
 
+
 	<body>
-		<a href="/">← Home</a>
 
-		<h1>Photography</h1>
+		<!-- ======================
+		     NAVIGATION
+		======================= -->
 
-		<p>
-			A collection of places, light and moments.
-		</p>
+		<header class="navbar">
+
+			<a
+				class="logo"
+				href={base}
+			>
+				WEIYOU LI
+			</a>
+
+
+			<nav>
+
+				<a href={`${base}#about`}>
+					About
+				</a>
+
+				<a href={`${base}#work`}>
+					Work
+				</a>
+
+				<a href={`${base}photography/`}>
+					Photography
+				</a>
+
+				<a href={`${base}#notes`}>
+					Notes & Writing
+				</a>
+
+			</nav>
+
+		</header>
+
+
+
+		<main>
+
+			<!-- ======================
+			     HERO
+			======================= -->
+
+			<section class="hero">
+
+				<div class="hero-small">
+
+					<p>
+						Photography
+					</p>
+
+					<p>
+						Archive
+					</p>
+
+				</div>
+
+
+				<h1>
+					Places, light<br />
+					and moments.
+				</h1>
+
+
+				<div class="hero-bottom">
+
+					<p>
+						A collection of places,
+						details and moments
+						I've encountered.
+					</p>
+
+					<a href="#archive">
+						View archive ↓
+					</a>
+
+				</div>
+
+			</section>
+
+
+
+			<!-- ======================
+			     ARCHIVE
+			======================= -->
+
+			<section
+				id="archive"
+				class="archive"
+			>
+
+				<div class="archive-header">
+
+					<span>
+						Archive
+					</span>
+
+					<span>
+						{photos.length} photographs
+					</span>
+
+				</div>
+
+
+				<div class="gallery">
+
+					{photos.map((photo, index) => (
+
+						<button
+							class="photo"
+							data-src={`${base}images/photography/${photo.src}`}
+							data-alt={photo.alt}
+							data-location={photo.location}
+							data-year={photo.year}
+							data-index={index}
+							aria-label={`Open photograph ${index + 1}`}
+							type="button"
+						>
+
+							<img
+								src={`${base}images/photography/${photo.src}`}
+								alt={photo.alt}
+								loading="lazy"
+							/>
+
+
+							{
+								(photo.location || photo.year) && (
+
+									<div class="photo-info">
+
+										<span>
+											{photo.location}
+										</span>
+
+										<span>
+											{photo.year}
+										</span>
+
+									</div>
+
+								)
+							}
+
+						</button>
+
+					))}
+
+				</div>
+
+			</section>
+
+		</main>
+
+
+
+		<!-- ======================
+		     FULL SCREEN LIGHTBOX
+		======================= -->
+
+		<dialog id="lightbox">
+
+			<button
+				class="close"
+				aria-label="Close photograph"
+				type="button"
+			>
+				×
+			</button>
+
+
+			<button
+				class="previous"
+				aria-label="Previous photograph"
+				type="button"
+			>
+				←
+			</button>
+
+
+			<div class="lightbox-content">
+
+				<img
+					id="lightbox-image"
+					src=""
+					alt=""
+				/>
+
+
+				<div class="lightbox-info">
+
+					<span id="lightbox-counter">
+					</span>
+
+					<span id="lightbox-location">
+					</span>
+
+				</div>
+
+			</div>
+
+
+			<button
+				class="next"
+				aria-label="Next photograph"
+				type="button"
+			>
+				→
+			</button>
+
+		</dialog>
+
+
+
+		<!-- ======================
+		     FOOTER
+		======================= -->
+
+		<footer>
+
+			<div>
+				WEIYOU LI
+			</div>
+
+
+			<div class="footer-links">
+
+				<a
+					href="https://github.com/Shercroft"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					GitHub
+				</a>
+
+				<a href="#">
+					LinkedIn
+				</a>
+
+				<a href="miloliwy@gmail.com">
+					Email
+				</a>
+
+			</div>
+
+
+			<div>
+				© 2026
+			</div>
+
+		</footer>
+
+
+
+		<!-- ======================
+		     LIGHTBOX JAVASCRIPT
+		======================= -->
+
+		<script>
+
+			/*
+				The "!" after querySelector tells TypeScript
+				that these elements definitely exist.
+			*/
+
+			const dialog =
+				document.querySelector<HTMLDialogElement>(
+					"#lightbox"
+				)!;
+
+
+			const lightboxImage =
+				document.querySelector<HTMLImageElement>(
+					"#lightbox-image"
+				)!;
+
+
+			const counter =
+				document.querySelector<HTMLElement>(
+					"#lightbox-counter"
+				)!;
+
+
+			const locationLabel =
+				document.querySelector<HTMLElement>(
+					"#lightbox-location"
+				)!;
+
+
+			const photoElements =
+				Array.from(
+					document.querySelectorAll<HTMLButtonElement>(
+						".photo"
+					)
+				);
+
+
+			const closeButton =
+				document.querySelector<HTMLButtonElement>(
+					".close"
+				)!;
+
+
+			const previousButton =
+				document.querySelector<HTMLButtonElement>(
+					".previous"
+				)!;
+
+
+			const nextButton =
+				document.querySelector<HTMLButtonElement>(
+					".next"
+				)!;
+
+
+			let currentIndex = 0;
+
+
+
+			/*
+				Show a photograph in the lightbox.
+			*/
+
+			function showPhoto(index: number) {
+
+				if (photoElements.length === 0) {
+					return;
+				}
+
+
+				currentIndex =
+					(index + photoElements.length)
+					% photoElements.length;
+
+
+				const photo =
+					photoElements[currentIndex];
+
+
+				if (!photo) {
+					return;
+				}
+
+
+				lightboxImage.src =
+					photo.dataset.src ?? "";
+
+
+				lightboxImage.alt =
+					photo.dataset.alt ?? "";
+
+
+				counter.textContent =
+					`${String(currentIndex + 1).padStart(2, "0")} / ${String(photoElements.length).padStart(2, "0")}`;
+
+
+				const place =
+					photo.dataset.location ?? "";
+
+
+				const year =
+					photo.dataset.year ?? "";
+
+
+				locationLabel.textContent =
+					[place, year]
+						.filter(Boolean)
+						.join(" · ");
+
+			}
+
+
+
+			/*
+				Click a gallery photograph.
+			*/
+
+			photoElements.forEach(
+				(photo, index) => {
+
+					photo.addEventListener(
+						"click",
+						() => {
+
+							showPhoto(index);
+
+							dialog.showModal();
+
+						}
+					);
+
+				}
+			);
+
+
+
+			/*
+				Previous photograph.
+			*/
+
+			previousButton.addEventListener(
+				"click",
+				() => {
+
+					showPhoto(
+						currentIndex - 1
+					);
+
+				}
+			);
+
+
+
+			/*
+				Next photograph.
+			*/
+
+			nextButton.addEventListener(
+				"click",
+				() => {
+
+					showPhoto(
+						currentIndex + 1
+					);
+
+				}
+			);
+
+
+
+			/*
+				Close button.
+			*/
+
+			closeButton.addEventListener(
+				"click",
+				() => {
+
+					dialog.close();
+
+				}
+			);
+
+
+
+			/*
+				Click the dark background
+				to close the lightbox.
+			*/
+
+			dialog.addEventListener(
+				"click",
+				(event: MouseEvent) => {
+
+					if (
+						event.target === dialog
+					) {
+
+						dialog.close();
+
+					}
+
+				}
+			);
+
+
+
+			/*
+				Keyboard navigation.
+			*/
+
+			document.addEventListener(
+				"keydown",
+				(event: KeyboardEvent) => {
+
+					if (!dialog.open) {
+						return;
+					}
+
+
+					if (
+						event.key === "ArrowLeft"
+					) {
+
+						showPhoto(
+							currentIndex - 1
+						);
+
+					}
+
+
+					if (
+						event.key === "ArrowRight"
+					) {
+
+						showPhoto(
+							currentIndex + 1
+						);
+
+					}
+
+
+					if (
+						event.key === "Escape"
+					) {
+
+						dialog.close();
+
+					}
+
+				}
+			);
+
+		</script>
+
+
 	</body>
+
 </html>
 
+
+
 <style>
-	body {
-		margin: 0;
-		padding: 5%;
-		background: #f2f0e9;
-		color: #111;
-		font-family: Arial, sans-serif;
+
+	/* ======================
+	   VARIABLES
+	======================= */
+
+	:root {
+
+		--background:
+			#f2f0e9;
+
+		--text:
+			#111111;
+
+		--line:
+			#aaa69c;
+
+		--serif:
+			Georgia,
+			"Times New Roman",
+			serif;
+
 	}
 
-	h1 {
-		font-family: Georgia, serif;
-		font-size: 10vw;
-		font-weight: normal;
-		margin-top: 120px;
+
+
+	/* ======================
+	   GLOBAL
+	======================= */
+
+	* {
+		box-sizing:
+			border-box;
 	}
+
+
+	html {
+		scroll-behavior:
+			smooth;
+	}
+
+
+	body {
+
+		margin: 0;
+
+		background:
+			var(--background);
+
+		color:
+			var(--text);
+
+		font-family:
+			Arial,
+			Helvetica,
+			sans-serif;
+
+		font-size:
+			15px;
+
+	}
+
 
 	a {
-		color: inherit;
-		text-decoration: none;
+
+		color:
+			inherit;
+
+		text-decoration:
+			none;
+
 	}
+
+
+	img {
+
+		display:
+			block;
+
+		max-width:
+			100%;
+
+	}
+
+
+
+	/* ======================
+	   NAVIGATION
+	======================= */
+
+	.navbar {
+
+		position:
+			absolute;
+
+		top: 0;
+		left: 0;
+
+		z-index:
+			20;
+
+		width:
+			100%;
+
+		display:
+			flex;
+
+		justify-content:
+			space-between;
+
+		align-items:
+			center;
+
+		padding:
+			28px
+			4vw;
+
+	}
+
+
+	.logo {
+
+		font-weight:
+			600;
+
+		letter-spacing:
+			0.08em;
+
+	}
+
+
+	nav {
+
+		display:
+			flex;
+
+		gap:
+			32px;
+
+	}
+
+
+	nav a {
+
+		transition:
+			opacity
+			0.2s ease;
+
+	}
+
+
+	nav a:hover {
+
+		opacity:
+			0.45;
+
+	}
+
+
+
+	/* ======================
+	   HERO
+	======================= */
+
+	.hero {
+
+		min-height:
+			100vh;
+
+		display:
+			flex;
+
+		flex-direction:
+			column;
+
+		justify-content:
+			center;
+
+		padding:
+			130px
+			4vw
+			50px;
+
+	}
+
+
+	.hero-small {
+
+		display:
+			flex;
+
+		justify-content:
+			space-between;
+
+		font-size:
+			11px;
+
+		text-transform:
+			uppercase;
+
+		letter-spacing:
+			0.12em;
+
+		margin-bottom:
+			35px;
+
+	}
+
+
+	.hero h1 {
+
+		font-family:
+			var(--serif);
+
+		font-size:
+			clamp(
+				70px,
+				10vw,
+				165px
+			);
+
+		font-weight:
+			400;
+
+		line-height:
+			0.88;
+
+		letter-spacing:
+			-0.055em;
+
+		margin:
+			0;
+
+	}
+
+
+	.hero-bottom {
+
+		margin-top:
+			auto;
+
+		display:
+			flex;
+
+		align-items:
+			flex-end;
+
+		justify-content:
+			space-between;
+
+	}
+
+
+	.hero-bottom p {
+
+		max-width:
+			320px;
+
+		line-height:
+			1.5;
+
+	}
+
+
+
+	/* ======================
+	   ARCHIVE
+	======================= */
+
+	.archive {
+
+		border-top:
+			1px solid
+			var(--line);
+
+		padding:
+			80px
+			4vw
+			150px;
+
+	}
+
+
+	.archive-header {
+
+		display:
+			flex;
+
+		justify-content:
+			space-between;
+
+		margin-bottom:
+			60px;
+
+		font-size:
+			11px;
+
+		text-transform:
+			uppercase;
+
+		letter-spacing:
+			0.1em;
+
+	}
+
+
+
+	/* ======================
+	   MASONRY GALLERY
+	======================= */
+
+	.gallery {
+
+		columns:
+			3;
+
+		column-gap:
+			20px;
+
+	}
+
+
+	.photo {
+
+		width:
+			100%;
+
+		display:
+			block;
+
+		break-inside:
+			avoid;
+
+		margin:
+			0
+			0
+			35px;
+
+		padding:
+			0;
+
+		border:
+			0;
+
+		background:
+			transparent;
+
+		color:
+			inherit;
+
+		font:
+			inherit;
+
+		text-align:
+			left;
+
+		cursor:
+			pointer;
+
+	}
+
+
+	.photo img {
+
+		width:
+			100%;
+
+		height:
+			auto;
+
+		transition:
+			transform
+			0.6s ease,
+			opacity
+			0.3s ease;
+
+	}
+
+
+	.photo:hover img {
+
+		transform:
+			scale(1.012);
+
+		opacity:
+			0.92;
+
+	}
+
+
+	.photo-info {
+
+		display:
+			flex;
+
+		justify-content:
+			space-between;
+
+		margin-top:
+			10px;
+
+		font-size:
+			11px;
+
+		color:
+			#666;
+
+	}
+
+
+
+	/* ======================
+	   LIGHTBOX
+	======================= */
+
+	dialog {
+
+		width:
+			100vw;
+
+		height:
+			100vh;
+
+		max-width:
+			none;
+
+		max-height:
+			none;
+
+		margin:
+			0;
+
+		padding:
+			0;
+
+		border:
+			0;
+
+		background:
+			rgba(
+				12,
+				12,
+				12,
+				0.98
+			);
+
+		color:
+			white;
+
+	}
+
+
+	dialog::backdrop {
+
+		background:
+			black;
+
+	}
+
+
+	.lightbox-content {
+
+		width:
+			100%;
+
+		height:
+			100%;
+
+		display:
+			flex;
+
+		flex-direction:
+			column;
+
+		align-items:
+			center;
+
+		justify-content:
+			center;
+
+		padding:
+			60px
+			90px;
+
+	}
+
+
+	.lightbox-content img {
+
+		max-width:
+			calc(
+				100vw
+				-
+				180px
+			);
+
+		max-height:
+			calc(
+				100vh
+				-
+				150px
+			);
+
+		width:
+			auto;
+
+		height:
+			auto;
+
+		object-fit:
+			contain;
+
+	}
+
+
+	.lightbox-info {
+
+		width:
+			min(
+				100%,
+				1100px
+			);
+
+		display:
+			flex;
+
+		justify-content:
+			space-between;
+
+		margin-top:
+			15px;
+
+		color:
+			#aaa;
+
+		font-size:
+			11px;
+
+		text-transform:
+			uppercase;
+
+		letter-spacing:
+			0.08em;
+
+	}
+
+
+
+	/* ======================
+	   LIGHTBOX BUTTONS
+	======================= */
+
+	.close,
+	.previous,
+	.next {
+
+		position:
+			fixed;
+
+		z-index:
+			100;
+
+		border:
+			0;
+
+		background:
+			transparent;
+
+		color:
+			white;
+
+		cursor:
+			pointer;
+
+	}
+
+
+	.close {
+
+		top:
+			22px;
+
+		right:
+			30px;
+
+		font-size:
+			40px;
+
+		line-height:
+			1;
+
+	}
+
+
+	.previous,
+	.next {
+
+		top:
+			50%;
+
+		transform:
+			translateY(-50%);
+
+		font-size:
+			28px;
+
+	}
+
+
+	.previous {
+
+		left:
+			30px;
+
+	}
+
+
+	.next {
+
+		right:
+			30px;
+
+	}
+
+
+
+	/* ======================
+	   FOOTER
+	======================= */
+
+	footer {
+
+		display:
+			flex;
+
+		justify-content:
+			space-between;
+
+		align-items:
+			center;
+
+		padding:
+			40px
+			4vw;
+
+		background:
+			#111;
+
+		color:
+			#f2f0e9;
+
+	}
+
+
+	.footer-links {
+
+		display:
+			flex;
+
+		gap:
+			25px;
+
+	}
+
+
+
+	/* ======================
+	   TABLET
+	======================= */
+
+	@media (
+		max-width:
+			900px
+	) {
+
+		.gallery {
+
+			columns:
+				2;
+
+		}
+
+	}
+
+
+
+	/* ======================
+	   MOBILE
+	======================= */
+
+	@media (
+		max-width:
+			600px
+	) {
+
+		.navbar {
+
+			align-items:
+				flex-start;
+
+		}
+
+
+		nav {
+
+			flex-direction:
+				column;
+
+			align-items:
+				flex-end;
+
+			gap:
+				8px;
+
+		}
+
+
+		.hero h1 {
+
+			font-size:
+				17vw;
+
+		}
+
+
+		.gallery {
+
+			columns:
+				1;
+
+		}
+
+
+		.lightbox-content {
+
+			padding:
+				60px
+				45px;
+
+		}
+
+
+		.lightbox-content img {
+
+			max-width:
+				calc(
+					100vw
+					-
+					90px
+				);
+
+		}
+
+
+		.previous {
+
+			left:
+				10px;
+
+		}
+
+
+		.next {
+
+			right:
+				10px;
+
+		}
+
+
+		footer {
+
+			flex-direction:
+				column;
+
+			align-items:
+				flex-start;
+
+			gap:
+				30px;
+
+		}
+
+	}
+
 </style>
