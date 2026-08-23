@@ -80,19 +80,19 @@ const photos = photoFiles.map((src) => ({
 
 			<nav>
 
-				<a href={`${base}#about`}>
+				<a href={`${base}/#about`}>
 					About
 				</a>
 
-				<a href={`${base}#work`}>
+				<a href={`${base}/#work`}>
 					Work
 				</a>
 
-				<a href={`${base}photography/`}>
+				<a href={`${base}/photography/`}>
 					Photography
 				</a>
 
-				<a href={`${base}#notes`}>
+				<a href={`${base}/#notes`}>
 					Notes & Writing
 				</a>
 
@@ -175,7 +175,7 @@ const photos = photoFiles.map((src) => ({
 
 						<button
 							class="photo"
-							data-src={`${base}images/photography/${photo.src}`}
+							data-src={`${base}/images/photography/${photo.src}`}
 							data-alt={photo.alt}
 							data-location={photo.location}
 							data-year={photo.year}
@@ -185,7 +185,7 @@ const photos = photoFiles.map((src) => ({
 						>
 
 							<img
-								src={`${base}images/photography/${photo.src}`}
+								src={`${base}/images/photography/${photo.src}`}
 								alt={photo.alt}
 								loading="lazy"
 							/>
