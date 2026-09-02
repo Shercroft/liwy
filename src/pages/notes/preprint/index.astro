@@ -4,123 +4,830 @@ const base = import.meta.env.BASE_URL;
 
 <!doctype html>
 <html lang="en">
+
 	<head>
+
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+
+		<meta
+			name="viewport"
+			content="width=device-width"
+		/>
+
 		<meta
 			name="description"
-			content="Preprint — WEIYOU LI"
+			content="Counterexamples regarding elementary symmetric partitions — Preprint by Weiyou Li and collaborators."
 		/>
-		<title>Preprint— WEIYOU LI</title>
+
+		<title>
+			Counterexamples regarding elementary symmetric partitions — WEIYOU LI
+		</title>
+
 	</head>
+
 
 	<body>
 
+		<!-- ==================================================
+		     NAVIGATION
+		================================================== -->
+
 		<header class="navbar">
-			<a class="logo" href={base}>WEIYOU LI</a>
+
+			<a
+				class="logo"
+				href={`${base}/`}
+			>
+				WEIYOU LI
+			</a>
+
 
 			<nav>
-				<a href={`${base}#about`}>About</a>
-				<a href={`${base}#work`}>Work</a>
-				<a href={`${base}photography/`}>Photography</a>
-				<a href={`${base}#notes`}>Notes & Writing</a>
+
+				<a href={`${base}/#about`}>
+					About
+				</a>
+
+				<a href={`${base}/#work`}>
+					Work
+				</a>
+
+				<a href={`${base}/photography/`}>
+					Photography
+				</a>
+
+				<a href={`${base}/#notes`}>
+					Notes & Writing
+				</a>
+
 			</nav>
+
 		</header>
+
 
 		<main>
 
-			<section class="hero">
-				<div class="hero-small">
-					<p>Notes & Writing / 01</p>
-					<p>Preprint</p>
+			<!-- ==================================================
+			     HERO
+			================================================== -->
+
+			<section class="paper-hero">
+
+				<div class="hero-meta">
+
+					<span>
+						Preprint
+					</span>
+
+					<span>
+						Combinatorics · 2026
+					</span>
+
 				</div>
+
 
 				<h1>
-					Preprint.
+					Counterexamples regarding
+					elementary symmetric partitions
 				</h1>
 
-				<div class="hero-bottom">
+
+				<div class="hero-authors">
+
 					<p>
-						Selected research and academic work.
+						Vixail Hadelyn
 					</p>
 
-					<a href="#list">Explore ↓</a>
+					<p>
+						Harper Niergarth
+					</p>
+
+					<p class="me">
+						Weiyou Li
+					</p>
+
+					<p>
+						Wenhui Li
+					</p>
+
 				</div>
+
+
+				<div class="hero-bottom">
+
+					<div class="hero-description">
+
+						<p>
+							A combinatorics preprint studying injectivity
+							questions arising from symmetric-polynomial
+							maps on integer partitions.
+						</p>
+
+					</div>
+
+
+					<div class="hero-actions">
+
+						<a
+							class="primary-action"
+							href="https://arxiv.org/abs/2606.00420"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							View on arXiv ↗
+						</a>
+
+						<a
+							href="https://arxiv.org/pdf/2606.00420"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Read PDF ↗
+						</a>
+
+					</div>
+
+				</div>
+
 			</section>
 
-			<section id="list" class="section">
 
-				<div class="section-number">
-					01 — Preprint
+			<!-- ==================================================
+			     01 — RESEARCH QUESTION
+			================================================== -->
+
+			<section class="paper-section">
+
+				<div class="section-label">
+					01 — The Question
 				</div>
 
-                <div class="publication">
 
-                    <div class="publication-number">
-                        01
-                    </div>
+				<div class="section-content">
 
-                    <div class="publication-content">
+					<p class="eyebrow">
+						Research question
+					</p>
 
-                        <p class="publication-type">
-                            Preprint · arXiv · Combinatorics · 2026
-                        </p>
 
-                        <h2>
-                            Counterexamples regarding elementary symmetric partitions
-                        </h2>
+					<h2>
+						When do symmetric-polynomial constructions uniquely determine a partition?
+					</h2>
 
-                        <p class="authors">
-                            Vixail Hadelyn · Harper Niergarth ·
-                            <strong>Weiyou Li</strong> · Wenhui Li
-                        </p>
 
-                        <p class="description">
-                            We construct counterexamples to a refined injectivity
-                            conjecture for the elementary symmetric partition map,
-                            showing that it fails to be injective on partitions of
-                            length 2j for j ≥ 3. We also prove that the analogous
-                            map defined using complete homogeneous symmetric
-                            polynomials is injective on all partitions.
-                        </p>
+					<div class="text-columns">
 
-                        <div class="publication-meta">
-                            <span>arXiv:2606.00420</span>
-                            <span>math.CO</span>
-                        </div>
+						<p>
+							Ballantine, Beck and Merca introduced an
+							elementary symmetric partition map that sends
+							a partition to another partition constructed
+							from the summands appearing in an elementary
+							symmetric polynomial.
+						</p>
 
-                        <div class="publication-links">
 
-                            <a
-                                href="https://arxiv.org/abs/2606.00420"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                View on arXiv ↗
-                            </a>
+						<p>
+							A natural question is whether this transformation
+							preserves enough information to uniquely recover
+							the original partition—in other words, whether
+							the map is injective.
+						</p>
 
-                            <a
-                                href="https://arxiv.org/pdf/2606.00420"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                PDF ↗
-                            </a>
+					</div>
 
-                        </div>
+				</div>
 
-                    </div>
+			</section>
 
-                </div>
+
+			<!-- ==================================================
+			     02 — CONTEXT
+			================================================== -->
+
+			<section class="paper-section">
+
+				<div class="section-label">
+					02 — Context
+				</div>
+
+
+				<div class="section-content">
+
+					<p class="eyebrow">
+						From conjecture to counterexample
+					</p>
+
+
+					<h2>
+						A refined conjecture remained open.
+					</h2>
+
+
+					<div class="context-flow">
+
+						<div class="context-item">
+
+							<span>
+								01
+							</span>
+
+							<div>
+
+								<h3>
+									Original conjecture
+								</h3>
+
+								<p>
+									The elementary symmetric partition map
+									was conjectured to be injective for
+									partitions whose length is at least
+									the symmetric-polynomial degree.
+								</p>
+
+							</div>
+
+						</div>
+
+
+						<div class="context-item">
+
+							<span>
+								02
+							</span>
+
+							<div>
+
+								<h3>
+									First obstruction
+								</h3>
+
+								<p>
+									The boundary case where the partition
+									length equals the degree was previously
+									shown to fail.
+								</p>
+
+							</div>
+
+						</div>
+
+
+						<div class="context-item">
+
+							<span>
+								03
+							</span>
+
+							<div>
+
+								<h3>
+									Refined conjecture
+								</h3>
+
+								<p>
+									This led to a weaker conjecture:
+									perhaps injectivity still holds once
+									the partition length is strictly larger.
+								</p>
+
+							</div>
+
+						</div>
+
+
+						<div class="context-item">
+
+							<span>
+								04
+							</span>
+
+							<div>
+
+								<h3>
+									Our question
+								</h3>
+
+								<p>
+									Does this refined injectivity statement
+									actually survive?
+								</p>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+
+			<!-- ==================================================
+			     03 — MAIN RESULTS
+			================================================== -->
+
+			<section class="paper-section">
+
+				<div class="section-label">
+					03 — Main Results
+				</div>
+
+
+				<div class="section-content">
+
+					<p class="eyebrow">
+						Two complementary results
+					</p>
+
+
+					<h2>
+						One map fails.<br />
+						Its analogue succeeds.
+					</h2>
+
+
+					<div class="result-grid">
+
+						<!-- RESULT 01 -->
+
+						<div class="result-card">
+
+							<div class="result-top">
+
+								<span>
+									Result 01
+								</span>
+
+								<span>
+									Counterexample
+								</span>
+
+							</div>
+
+
+							<h3>
+								The refined injectivity conjecture is false.
+							</h3>
+
+
+							<p class="result-description">
+								We prove that the elementary symmetric partition map
+								is not injective on partitions of length&nbsp;&nbsp;<span class="math-inline">2j</span>&nbsp;&nbsp;for every&nbsp;&nbsp;<span class="math-inline">j ≥ 3</span>.
+							</p>
+
+
+							<div class="math-line">
+
+								<span class="math-symbol">
+									pre<sub>j</sub>
+								</span>
+
+								<span class="math-statement">
+									is not injective when
+								</span>
+
+								<span class="math-symbol">
+									ℓ = 2j, &nbsp; j ≥ 3
+								</span>
+
+							</div>
+
+						</div>
+
+
+						<!-- RESULT 02 -->
+
+						<div class="result-card">
+
+							<div class="result-top">
+
+								<span>
+									Result 02
+								</span>
+
+								<span>
+									Positive theorem
+								</span>
+
+							</div>
+
+
+							<h3>
+								The complete homogeneous analogue is injective.
+							</h3>
+
+
+							<p class="result-description">
+								For the analogous map defined using the complete
+								homogeneous symmetric polynomial, we prove
+								injectivity on the set of
+								<span class="emphasis-inline">all partitions</span>.
+							</p>
+
+
+							<div class="math-line">
+
+								<span class="math-symbol">
+									prh<sub>j</sub>
+								</span>
+
+								<span class="math-statement">
+									is injective on all partitions
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+
+			<!-- ==================================================
+			     04 — SUMMARY
+			================================================== -->
+
+			<section class="paper-section">
+
+				<div class="section-label">
+					04 — Summary
+				</div>
+
+
+				<div class="section-content">
+
+					<p class="eyebrow">
+						In brief
+					</p>
+
+
+					<h2>
+						Counterexamples reveal a sharp contrast between two natural partition maps.
+					</h2>
+
+
+					<div class="summary-layout">
+
+						<div class="summary-lead">
+
+							<p>
+								The paper shows that increasing the
+								partition length beyond the previously
+								known failure case does not restore
+								injectivity for the elementary symmetric
+								construction.
+							</p>
+
+						</div>
+
+
+						<div class="summary-detail">
+
+							<p>
+								At the same time, replacing the elementary
+								symmetric polynomial with the complete
+								homogeneous symmetric polynomial produces
+								a fundamentally different outcome:
+								the corresponding map is injective
+								without a restriction on partition length.
+							</p>
+
+							<p>
+								Together, the results illustrate how
+								closely related symmetric-polynomial
+								constructions can encode partition
+								information in very different ways.
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+
+			<!-- ==================================================
+			     05 — PAPER DETAILS
+			================================================== -->
+
+			<section class="paper-section">
+
+				<div class="section-label">
+					05 — Paper Details
+				</div>
+
+
+				<div class="section-content">
+
+					<h2>
+						Publication information.
+					</h2>
+
+
+					<div class="details-grid">
+
+						<div class="detail-card">
+
+							<span>
+								arXiv
+							</span>
+
+							<strong>
+								2606.00420
+							</strong>
+
+						</div>
+
+
+						<div class="detail-card">
+
+							<span>
+								Subject
+							</span>
+
+							<strong>
+								math.CO
+							</strong>
+
+						</div>
+
+
+						<div class="detail-card">
+
+							<span>
+								Pages
+							</span>
+
+							<strong>
+								18
+							</strong>
+
+						</div>
+
+
+						<div class="detail-card">
+
+							<span>
+								Current version
+							</span>
+
+							<strong>
+								v3
+							</strong>
+
+						</div>
+
+
+						<div class="detail-card">
+
+							<span>
+								Submitted
+							</span>
+
+							<strong>
+								29 May 2026
+							</strong>
+
+						</div>
+
+
+						<div class="detail-card">
+
+							<span>
+								Last revised
+							</span>
+
+							<strong>
+								26 Jun 2026
+							</strong>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+
+			<!-- ==================================================
+			     06 — AUTHORS
+			================================================== -->
+
+			<section class="paper-section">
+
+				<div class="section-label">
+					06 — Authors
+				</div>
+
+
+				<div class="section-content">
+
+					<h2>
+						Collaborative work in combinatorics.
+					</h2>
+
+
+					<div class="author-list">
+
+						<div>
+
+							<span>
+								01
+							</span>
+
+							<strong>
+								Vixail Hadelyn
+							</strong>
+
+						</div>
+
+
+						<div>
+
+							<span>
+								02
+							</span>
+
+							<strong>
+								Harper Niergarth
+							</strong>
+
+						</div>
+
+
+						<div>
+
+							<span>
+								03
+							</span>
+
+							<strong>
+								Weiyou Li
+							</strong>
+
+							<em>
+								This site
+							</em>
+
+						</div>
+
+
+						<div>
+
+							<span>
+								04
+							</span>
+
+							<strong>
+								Wenhui Li
+							</strong>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+
+			<!-- ==================================================
+			     07 — READ
+			================================================== -->
+
+			<section class="paper-section">
+
+				<div class="section-label">
+					07 — Read
+				</div>
+
+
+				<div class="section-content">
+
+					<p class="eyebrow">
+						Open access
+					</p>
+
+
+					<h2>
+						Read the full paper.
+					</h2>
+
+
+					<div class="access-links">
+
+						<a
+							href="https://arxiv.org/abs/2606.00420"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+
+							<span>
+								arXiv
+							</span>
+
+							<strong>
+								View abstract
+							</strong>
+
+							<b>
+								↗
+							</b>
+
+						</a>
+
+
+						<a
+							href="https://arxiv.org/pdf/2606.00420"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+
+							<span>
+								PDF
+							</span>
+
+							<strong>
+								Read full paper
+							</strong>
+
+							<b>
+								↗
+							</b>
+
+						</a>
+
+
+						<a
+							href="https://arxiv.org/html/2606.00420"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+
+							<span>
+								HTML
+							</span>
+
+							<strong>
+								Web version
+							</strong>
+
+							<b>
+								↗
+							</b>
+
+						</a>
+
+
+						<a
+							href="https://doi.org/10.48550/arXiv.2606.00420"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+
+							<span>
+								DOI
+							</span>
+
+							<strong>
+								10.48550/arXiv.2606.00420
+							</strong>
+
+							<b>
+								↗
+							</b>
+
+						</a>
+
+					</div>
+
+				</div>
 
 			</section>
 
 		</main>
 
+
+		<!-- ==================================================
+		     FOOTER
+		================================================== -->
+
 		<footer>
-			<div>WEIYOU LI</div>
 
 			<div>
+				WEIYOU LI
+			</div>
+
+
+			<div class="footer-links">
+
 				<a
 					href="https://github.com/Shercroft"
 					target="_blank"
@@ -129,317 +836,1451 @@ const base = import.meta.env.BASE_URL;
 					GitHub
 				</a>
 
+
 				<a
-					href="YOUR_LINKEDIN_URL"
+					href="https://www.linkedin.com/in/weiyou-li-032426252/"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					LinkedIn
 				</a>
 
+
 				<a href="mailto:miloliwy@gmail.com">
 					Email
 				</a>
+
 			</div>
 
-			<div>© 2026</div>
+
+			<div>
+				© 2026
+			</div>
+
 		</footer>
 
 	</body>
+
 </html>
 
+
 <style>
+
+	/* ==================================================
+	   GLOBAL
+	================================================== */
+
 	:root {
-		--serif: Georgia, "Times New Roman", serif;
+
+		--serif:
+			Georgia,
+			"Times New Roman",
+			serif;
+
+		--bg:
+			#f2f0e9;
+
+		--text:
+			#111;
+
+		--muted:
+			#666;
+
+		--line:
+			#aaa69c;
+
 	}
+
 
 	* {
-		box-sizing: border-box;
+
+		box-sizing:
+			border-box;
+
 	}
+
 
 	html {
-		scroll-behavior: smooth;
+
+		scroll-behavior:
+			smooth;
+
 	}
+
 
 	body {
-		margin: 0;
-		background: #f2f0e9;
-		color: #111;
-		font-family: Arial, Helvetica, sans-serif;
-		font-size: 15px;
+
+		margin:
+			0;
+
+		background:
+			var(--bg);
+
+		color:
+			var(--text);
+
+		font-family:
+			Arial,
+			Helvetica,
+			sans-serif;
+
+		font-size:
+			15px;
+
 	}
+
 
 	a {
-		color: inherit;
-		text-decoration: none;
+
+		color:
+			inherit;
+
+		text-decoration:
+			none;
+
 	}
+
+
+	/* ==================================================
+	   NAVIGATION
+	================================================== */
 
 	.navbar {
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 28px 4vw;
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 10;
+
+		position:
+			absolute;
+
+		top:
+			0;
+
+		left:
+			0;
+
+		z-index:
+			10;
+
+		display:
+			flex;
+
+		align-items:
+			center;
+
+		justify-content:
+			space-between;
+
+		width:
+			100%;
+
+		padding:
+			28px
+			4vw;
+
 	}
+
 
 	.logo {
-		font-weight: 600;
-		letter-spacing: 0.08em;
+
+		font-weight:
+			600;
+
+		letter-spacing:
+			0.08em;
+
 	}
+
 
 	nav {
-		display: flex;
-		gap: 32px;
+
+		display:
+			flex;
+
+		gap:
+			32px;
+
 	}
+
 
 	nav a {
-		transition: opacity 0.2s ease;
+
+		transition:
+			opacity
+			0.2s ease;
+
 	}
+
 
 	nav a:hover {
-		opacity: 0.45;
+
+		opacity:
+			0.45;
+
 	}
 
-	.hero {
-		min-height: 100vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding: 130px 4vw 50px;
+
+	/* ==================================================
+	   HERO
+	================================================== */
+
+	.paper-hero {
+
+		display:
+			flex;
+
+		flex-direction:
+			column;
+
+		min-height:
+			100vh;
+
+		padding:
+			155px
+			4vw
+			55px;
+
 	}
 
-	.hero-small {
-		display: flex;
-		justify-content: space-between;
-		text-transform: uppercase;
-		font-size: 11px;
-		letter-spacing: 0.12em;
-		margin-bottom: 35px;
+
+	.hero-meta {
+
+		display:
+			flex;
+
+		justify-content:
+			space-between;
+
+		margin-bottom:
+			65px;
+
+		font-size:
+			11px;
+
+		text-transform:
+			uppercase;
+
+		letter-spacing:
+			0.12em;
+
 	}
 
-	.hero h1 {
-		font-family: var(--serif);
-		font-size: clamp(70px, 10vw, 165px);
-		font-weight: 400;
-		letter-spacing: -0.055em;
-		line-height: 0.9;
-		margin: 0;
+
+	.paper-hero h1 {
+
+		max-width:
+			1500px;
+
+		margin:
+			0;
+
+		font-family:
+			var(--serif);
+
+		font-size:
+			clamp(
+				60px,
+				7.2vw,
+				132px
+			);
+
+		font-weight:
+			400;
+
+		line-height:
+			0.96;
+
+		letter-spacing:
+			-0.05em;
+
 	}
+
+
+	.hero-authors {
+
+		display:
+			flex;
+
+		flex-wrap:
+			wrap;
+
+		gap:
+			10px
+			32px;
+
+		margin-top:
+			72px;
+
+	}
+
+
+	.hero-authors p {
+
+		margin:
+			0;
+
+		font-size:
+			14px;
+
+		color:
+			#555;
+
+	}
+
+
+	.hero-authors .me {
+
+		color:
+			#111;
+
+		font-weight:
+			600;
+
+	}
+
 
 	.hero-bottom {
-		margin-top: auto;
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-		line-height: 1.5;
+
+		display:
+			flex;
+
+		align-items:
+			flex-end;
+
+		justify-content:
+			space-between;
+
+		gap:
+			40px;
+
+		margin-top:
+			auto;
+
 	}
 
-	.section {
-		padding: 100px 4vw 140px;
-		border-top: 1px solid #aaa69c;
+
+	.hero-description {
+
+		max-width:
+			540px;
+
 	}
 
-	.section-number {
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		font-size: 11px;
-		margin-bottom: 90px;
+
+	.hero-description p {
+
+		margin:
+			0;
+
+		font-size:
+			17px;
+
+		line-height:
+			1.55;
+
 	}
 
-	.writing-list {
-		border-top: 1px solid #aaa69c;
+
+	.hero-actions {
+
+		display:
+			flex;
+
+		align-items:
+			center;
+
+		gap:
+			25px;
+
 	}
 
-	.writing-list a {
-		display: grid;
-		grid-template-columns: 2fr 1fr auto;
-		gap: 30px;
-		padding: 30px 0;
-		border-bottom: 1px solid #aaa69c;
-		transition: padding 0.3s ease;
+
+	.hero-actions a {
+
+		padding-bottom:
+			4px;
+
+		border-bottom:
+			1px solid
+				#111;
+
+		font-size:
+			13px;
+
 	}
 
-	.writing-list a:hover {
-		padding-left: 20px;
+
+	.hero-actions .primary-action {
+
+		padding:
+			12px
+			17px;
+
+		border:
+			1px solid
+				#111;
+
+		border-radius:
+			999px;
+
 	}
+
+
+	.hero-actions .primary-action:hover {
+
+		background:
+			#111;
+
+		color:
+			var(--bg);
+
+	}
+
+
+	/* ==================================================
+	   SECTIONS
+	================================================== */
+
+	.paper-section {
+
+		display:
+			grid;
+
+		grid-template-columns:
+			250px
+			1fr;
+
+		gap:
+			70px;
+
+		padding:
+			120px
+			4vw
+			140px;
+
+		border-top:
+			1px solid
+				var(--line);
+
+	}
+
+
+	.section-label {
+
+		padding-top:
+			10px;
+
+		font-size:
+			11px;
+
+		text-transform:
+			uppercase;
+
+		letter-spacing:
+			0.11em;
+
+	}
+
+
+	.section-content {
+
+		max-width:
+			1180px;
+
+	}
+
+
+	.eyebrow {
+
+		margin:
+			0
+			0
+			24px;
+
+		font-size:
+			10px;
+
+		text-transform:
+			uppercase;
+
+		letter-spacing:
+			0.13em;
+
+		color:
+			var(--muted);
+
+	}
+
+
+	.section-content > h2 {
+
+		max-width:
+			1100px;
+
+		margin:
+			0
+			0
+			55px;
+
+		font-family:
+			var(--serif);
+
+		font-size:
+			clamp(
+				48px,
+				5.5vw,
+				90px
+			);
+
+		font-weight:
+			400;
+
+		line-height:
+			0.97;
+
+		letter-spacing:
+			-0.045em;
+
+	}
+
+
+	.text-columns {
+
+		display:
+			grid;
+
+		grid-template-columns:
+			repeat(
+				2,
+				1fr
+			);
+
+		gap:
+			50px;
+
+		max-width:
+			900px;
+
+	}
+
+
+	.text-columns p,
+	.summary-layout p {
+
+		margin:
+			0;
+
+		font-size:
+			16px;
+
+		line-height:
+			1.7;
+
+	}
+
+
+	/* ==================================================
+	   CONTEXT
+	================================================== */
+
+	.context-flow {
+
+		margin-top:
+			30px;
+
+		border-top:
+			1px solid
+				var(--line);
+
+	}
+
+
+	.context-item {
+
+		display:
+			grid;
+
+		grid-template-columns:
+			60px
+			1fr;
+
+		gap:
+			25px;
+
+		padding:
+			30px
+			0;
+
+		border-bottom:
+			1px solid
+				var(--line);
+
+	}
+
+
+	.context-item > span {
+
+		padding-top:
+			5px;
+
+		font-size:
+			11px;
+
+		color:
+			var(--muted);
+
+	}
+
+
+	.context-item h3 {
+
+		margin:
+			0
+			0
+			10px;
+
+		font-family:
+			var(--serif);
+
+		font-size:
+			30px;
+
+		font-weight:
+			400;
+
+	}
+
+
+	.context-item p {
+
+		max-width:
+			650px;
+
+		margin:
+			0;
+
+		line-height:
+			1.6;
+
+	}
+
+
+	/* ==================================================
+	   RESULTS
+	================================================== */
+
+	.result-grid {
+
+		display:
+			grid;
+
+		grid-template-columns:
+			repeat(
+				2,
+				minmax(0, 1fr)
+			);
+
+		gap:
+			16px;
+
+	}
+
+
+	.result-card {
+
+		display:
+			flex;
+
+		flex-direction:
+			column;
+
+		min-height:
+			470px;
+
+		padding:
+			35px;
+
+		border:
+			1px solid
+				var(--line);
+
+	}
+
+
+	.result-top {
+
+		display:
+			flex;
+
+		justify-content:
+			space-between;
+
+		gap:
+			20px;
+
+		margin-bottom:
+			65px;
+
+		font-size:
+			10px;
+
+		text-transform:
+			uppercase;
+
+		letter-spacing:
+			0.1em;
+
+		color:
+			var(--muted);
+
+	}
+
+
+	.result-card h3 {
+
+		margin:
+			0
+			0
+			28px;
+
+		font-family:
+			var(--serif);
+
+		font-size:
+			clamp(
+				30px,
+				3vw,
+				48px
+			);
+
+		font-weight:
+			400;
+
+		line-height:
+			1.06;
+
+		letter-spacing:
+			-0.03em;
+
+	}
+
+
+	.result-description {
+
+		max-width:
+			520px;
+
+		margin:
+			0;
+
+		font-size:
+			15px;
+
+		line-height:
+			1.75;
+
+	}
+
+
+	.math-inline {
+
+		display:
+			inline;
+
+		font-family:
+			Georgia,
+			"Times New Roman",
+			serif;
+
+		font-size:
+			1.08em;
+
+		font-style:
+			italic;
+
+		font-weight:
+			400;
+
+		white-space:
+			nowrap;
+
+	}
+
+
+	.emphasis-inline {
+
+		display:
+			inline;
+
+		font-family:
+			Georgia,
+			"Times New Roman",
+			serif;
+
+		font-size:
+			1.04em;
+
+		font-style:
+			italic;
+
+		font-weight:
+			400;
+
+		white-space:
+			nowrap;
+
+	}
+
+
+	.math-line {
+
+		display:
+			flex;
+
+		flex-wrap:
+			wrap;
+
+		align-items:
+			baseline;
+
+		gap:
+			10px;
+
+		margin-top:
+			auto;
+
+		padding-top:
+			30px;
+
+		border-top:
+			1px solid
+				var(--line);
+
+	}
+
+
+	.math-symbol {
+
+		font-family:
+			Georgia,
+			"Times New Roman",
+			serif;
+
+		font-size:
+			23px;
+
+		font-style:
+			italic;
+
+		font-weight:
+			400;
+
+		letter-spacing:
+			0.01em;
+
+		white-space:
+			nowrap;
+
+	}
+
+
+	.math-symbol sub {
+
+		font-size:
+			0.65em;
+
+		vertical-align:
+			-0.25em;
+
+	}
+
+
+	.math-statement {
+
+		font-family:
+			Georgia,
+			"Times New Roman",
+			serif;
+
+		font-size:
+			20px;
+
+		font-weight:
+			400;
+
+	}
+
+
+	/* ==================================================
+	   SUMMARY
+	================================================== */
+
+	.summary-layout {
+
+		display:
+			grid;
+
+		grid-template-columns:
+			1fr
+			1fr;
+
+		gap:
+			70px;
+
+	}
+
+
+	.summary-lead p {
+
+		font-family:
+			var(--serif);
+
+		font-size:
+			clamp(
+				25px,
+				2.4vw,
+				38px
+			);
+
+		line-height:
+			1.2;
+
+		letter-spacing:
+			-0.02em;
+
+	}
+
+
+	.summary-detail {
+
+		display:
+			flex;
+
+		flex-direction:
+			column;
+
+		gap:
+			25px;
+
+	}
+
+
+	/* ==================================================
+	   DETAILS
+	================================================== */
+
+	.details-grid {
+
+		display:
+			grid;
+
+		grid-template-columns:
+			repeat(
+				3,
+				1fr
+			);
+
+		gap:
+			1px;
+
+		background:
+			var(--line);
+
+		border:
+			1px solid
+				var(--line);
+
+	}
+
+
+	.detail-card {
+
+		min-height:
+			160px;
+
+		padding:
+			25px;
+
+		background:
+			var(--bg);
+
+	}
+
+
+	.detail-card span {
+
+		display:
+			block;
+
+		margin-bottom:
+			40px;
+
+		font-size:
+			10px;
+
+		text-transform:
+			uppercase;
+
+		letter-spacing:
+			0.1em;
+
+		color:
+			var(--muted);
+
+	}
+
+
+	.detail-card strong {
+
+		font-family:
+			var(--serif);
+
+		font-size:
+			24px;
+
+		font-weight:
+			400;
+
+	}
+
+
+	/* ==================================================
+	   AUTHORS
+	================================================== */
+
+	.author-list {
+
+		border-top:
+			1px solid
+				var(--line);
+
+	}
+
+
+	.author-list > div {
+
+		display:
+			grid;
+
+		grid-template-columns:
+			60px
+			1fr
+			auto;
+
+		align-items:
+			center;
+
+		gap:
+			20px;
+
+		padding:
+			25px
+			0;
+
+		border-bottom:
+			1px solid
+				var(--line);
+
+	}
+
+
+	.author-list span {
+
+		font-size:
+			11px;
+
+		color:
+			var(--muted);
+
+	}
+
+
+	.author-list strong {
+
+		font-family:
+			var(--serif);
+
+		font-size:
+			30px;
+
+		font-weight:
+			400;
+
+	}
+
+
+	.author-list em {
+
+		font-size:
+			10px;
+
+		font-style:
+			normal;
+
+		text-transform:
+			uppercase;
+
+		letter-spacing:
+			0.1em;
+
+		color:
+			var(--muted);
+
+	}
+
+
+	/* ==================================================
+	   ACCESS
+	================================================== */
+
+	.access-links {
+
+		border-top:
+			1px solid
+				var(--line);
+
+	}
+
+
+	.access-links a {
+
+		display:
+			grid;
+
+		grid-template-columns:
+			100px
+			1fr
+			auto;
+
+		align-items:
+			center;
+
+		gap:
+			30px;
+
+		padding:
+			28px
+			0;
+
+		border-bottom:
+			1px solid
+				var(--line);
+
+		transition:
+			padding
+			0.25s ease;
+
+	}
+
+
+	.access-links a:hover {
+
+		padding-left:
+			18px;
+
+	}
+
+
+	.access-links span {
+
+		font-size:
+			10px;
+
+		text-transform:
+			uppercase;
+
+		letter-spacing:
+			0.1em;
+
+		color:
+			var(--muted);
+
+	}
+
+
+	.access-links strong {
+
+		font-family:
+			var(--serif);
+
+		font-size:
+			clamp(
+				22px,
+				2vw,
+				32px
+			);
+
+		font-weight:
+			400;
+
+	}
+
+
+	.access-links b {
+
+		font-weight:
+			400;
+
+	}
+
+
+	/* ==================================================
+	   FOOTER
+	================================================== */
 
 	footer {
-		padding: 40px 4vw;
-		background: #111;
-		color: #f2f0e9;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+
+		display:
+			flex;
+
+		align-items:
+			center;
+
+		justify-content:
+			space-between;
+
+		padding:
+			40px
+			4vw;
+
+		background:
+			#111;
+
+		color:
+			var(--bg);
+
 	}
 
-	footer div:nth-child(2) {
-		display: flex;
-		gap: 25px;
+
+	.footer-links {
+
+		display:
+			flex;
+
+		gap:
+			25px;
+
 	}
 
-    /* -------------------------
-    FEATURED PUBLICATION
-    -------------------------- */
 
-    .publication {
-        display: grid;
+	.footer-links a {
 
-        grid-template-columns:
-            70px
-            1fr;
+		transition:
+			opacity
+			0.2s ease;
 
-        gap: 45px;
-
-        padding:
-            60px 0
-            80px;
-
-        border-top:
-            1px solid #aaa69c;
-
-        border-bottom:
-            1px solid #aaa69c;
-    }
+	}
 
 
-    .publication-number {
-        color: #777;
+	.footer-links a:hover {
 
-        font-size: 12px;
+		opacity:
+			0.5;
 
-        padding-top: 8px;
-    }
-
-
-    .publication-content {
-        max-width: 1100px;
-    }
+	}
 
 
-    .publication-type {
-        margin:
-            0 0
-            30px;
+	/* ==================================================
+	   TABLET
+	================================================== */
 
-        font-size: 11px;
+	@media (max-width: 900px) {
 
-        text-transform: uppercase;
+		.paper-section {
 
-        letter-spacing: 0.1em;
+			grid-template-columns:
+				1fr;
 
-        color: #666;
-    }
+			gap:
+				35px;
 
-
-    .publication h2 {
-        font-family:
-            Georgia,
-            "Times New Roman",
-            serif;
-
-        font-size:
-            clamp(
-                38px,
-                5vw,
-                72px
-            );
-
-        font-weight: 400;
-
-        line-height: 1;
-
-        letter-spacing: -0.04em;
-
-        margin:
-            0 0
-            25px;
-    }
-
-
-    .authors {
-        font-size: 15px;
-
-        margin:
-            0 0
-            45px;
-
-        color: #555;
-    }
-
-
-    .description {
-        max-width: 700px;
-
-        font-size: 17px;
-
-        line-height: 1.65;
-
-        margin:
-            0 0
-            45px;
-    }
-
-
-    .publication-links {
-        display: flex;
-
-        gap: 30px;
-    }
-
-
-    .publication-links a {
-        border-bottom:
-            1px solid #111;
-
-        padding-bottom: 3px;
-
-        transition:
-            opacity 0.2s ease;
-    }
-
-
-    .publication-links a:hover {
-        opacity: 0.45;
-    }
-
-
-    @media (max-width: 800px) {
-
-        .publication {
-            grid-template-columns:
-                1fr;
-
-            gap: 20px;
-        }
-
-    }
-
-	@media (max-width: 800px) {
-		.navbar {
-			align-items: flex-start;
 		}
+
+
+		.paper-hero h1 {
+
+			font-size:
+				11vw;
+
+		}
+
+
+		.text-columns,
+		.result-grid,
+		.summary-layout {
+
+			grid-template-columns:
+				1fr;
+
+		}
+
+
+		.details-grid {
+
+			grid-template-columns:
+				repeat(
+					2,
+					1fr
+				);
+
+		}
+
+
+		.hero-bottom {
+
+			flex-direction:
+				column;
+
+			align-items:
+				flex-start;
+
+		}
+
+	}
+
+
+	/* ==================================================
+	   MOBILE
+	================================================== */
+
+	@media (max-width: 650px) {
+
+		.navbar {
+
+			align-items:
+				flex-start;
+
+		}
+
 
 		nav {
-			flex-direction: column;
-			gap: 8px;
+
+			flex-direction:
+				column;
+
+			gap:
+				8px;
+
 		}
 
-		.hero h1 {
-			font-size: 18vw;
+
+		.paper-hero {
+
+			padding-top:
+				170px;
+
 		}
 
-		.writing-list a {
-			grid-template-columns: 1fr;
+
+		.paper-hero h1 {
+
+			font-size:
+				14vw;
+
+			line-height:
+				0.98;
+
 		}
+
+
+		.hero-meta {
+
+			flex-direction:
+				column;
+
+			gap:
+				8px;
+
+		}
+
+
+		.hero-authors {
+
+			margin-top:
+				50px;
+
+		}
+
+
+		.hero-actions {
+
+			flex-direction:
+				column;
+
+			align-items:
+				flex-start;
+
+		}
+
+
+		.details-grid {
+
+			grid-template-columns:
+				1fr;
+
+		}
+
+
+		.author-list > div {
+
+			grid-template-columns:
+				40px
+				1fr;
+
+		}
+
+
+		.author-list em {
+
+			grid-column:
+				2;
+
+		}
+
+
+		.access-links a {
+
+			grid-template-columns:
+				1fr
+				auto;
+
+		}
+
+
+		.access-links span {
+
+			grid-column:
+				1 / -1;
+
+		}
+
+
+		.math-symbol {
+
+			font-size:
+				20px;
+
+		}
+
+
+		.math-statement {
+
+			font-size:
+				18px;
+
+		}
+
 
 		footer {
-			flex-direction: column;
-			align-items: flex-start;
-			gap: 30px;
+
+			flex-direction:
+				column;
+
+			align-items:
+				flex-start;
+
+			gap:
+				30px;
+
 		}
+
 	}
+
 </style>

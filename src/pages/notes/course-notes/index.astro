@@ -4,269 +4,1116 @@ const base = import.meta.env.BASE_URL;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta
-			name="description"
-			content="Course Notes — WEIYOU LI"
-		/>
-		<title>Course Notes — WEIYOU LI</title>
-	</head>
 
-	<body>
+<head>
+	<meta charset="UTF-8" />
 
-		<header class="navbar">
-			<a class="logo" href={base}>WEIYOU LI</a>
+	<meta
+		name="viewport"
+		content="width=device-width"
+	/>
 
-			<nav>
-				<a href={`${base}#about`}>About</a>
-				<a href={`${base}#work`}>Work</a>
-				<a href={`${base}photography/`}>Photography</a>
-				<a href={`${base}#notes`}>Notes & Writing</a>
-			</nav>
-		</header>
+	<meta
+		name="description"
+		content="Course Notes — WEIYOU LI"
+	/>
 
-		<main>
+	<title>
+		Course Notes — WEIYOU LI
+	</title>
+</head>
 
-			<section class="hero">
-				<div class="hero-small">
-					<p>Notes & Writing / 02</p>
-					<p>Course Notes</p>
-				</div>
 
-				<h1>
-					Course Notes.
-				</h1>
+<body>
 
-				<div class="hero-bottom">
-					<p>
-						Notes I have taken for courses in
-						mathematics, statistics, and related topics.
-					</p>
+	<!-- ==================================================
+	     NAVIGATION
+	================================================== -->
 
-					<a href="#list">Explore ↓</a>
-				</div>
-			</section>
+	<header class="navbar">
 
-			<section id="list" class="section">
+		<a
+			class="logo"
+			href={base}
+		>
+			WEIYOU LI
+		</a>
+
+
+		<nav>
+
+			<a href={`${base}#about`}>
+				About
+			</a>
+
+			<a href={`${base}#work`}>
+				Work
+			</a>
+
+			<a href={`${base}photography/`}>
+				Photography
+			</a>
+
+			<a href={`${base}#notes`}>
+				Notes & Writing
+			</a>
+
+		</nav>
+
+	</header>
+
+
+	<main>
+
+		<!-- ==================================================
+		     HERO
+		================================================== -->
+
+		<section class="hero">
+
+			<div class="hero-small">
+
+				<p>
+					Notes & Writing / 02
+				</p>
+
+				<p>
+					Course Notes
+				</p>
+
+			</div>
+
+
+			<h1>
+				Course<br />
+				Notes.
+			</h1>
+
+
+			<div class="hero-bottom">
+
+				<p>
+					Selected notes from mathematics,<br />
+					statistics and related coursework.
+				</p>
+
+
+				<a href="#notes-list">
+					Explore ↓
+				</a>
+
+			</div>
+
+		</section>
+
+
+		<!-- ==================================================
+		     COURSE NOTES
+		================================================== -->
+
+		<section
+			id="notes-list"
+			class="section"
+		>
+
+			<div class="section-header">
 
 				<div class="section-number">
 					02 — Course Notes
 				</div>
 
-				<div class="writing-list">
-
-					<a href="#">
-						<span>Complex Analysis</span>
-						<span>PMATH 352</span>
-						<span>↗</span>
-					</a>
-
-					<a href="#">
-						<span>Statistical Modelling</span>
-						<span>STAT</span>
-						<span>↗</span>
-					</a>
-
-					<a href="#">
-						<span>Time Series</span>
-						<span>STAT</span>
-						<span>↗</span>
-					</a>
-
+				<div class="section-count">
+					04 Notes
 				</div>
 
-			</section>
-
-		</main>
-
-		<footer>
-			<div>WEIYOU LI</div>
-
-			<div>
-				<a
-					href="https://github.com/Shercroft"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					GitHub
-				</a>
-
-				<a
-					href="YOUR_LINKEDIN_URL"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					LinkedIn
-				</a>
-
-				<a href="mailto:miloliwy@gmail.com">
-					Email
-				</a>
 			</div>
 
-			<div>© 2026</div>
-		</footer>
 
-	</body>
+			<div class="notes-list">
+
+
+				<!-- ==================================================
+				     01 — PMATH 351
+				================================================== -->
+
+				<a
+					class="note-item"
+					href={`${base}notes/course-notes/PMATH351_notes.pdf`}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+
+					<div class="note-title">
+
+						<span class="note-number">
+							01
+						</span>
+
+
+						<div class="note-name">
+
+							<h2>
+								Real Analysis
+							</h2>
+
+							<p>
+								PMATH 351
+							</p>
+
+						</div>
+
+					</div>
+
+
+					<div class="note-meta">
+						Mathematics · Analysis
+					</div>
+
+
+					<div class="note-link">
+						PDF ↗
+					</div>
+
+				</a>
+
+
+
+				<!-- ==================================================
+				     02 — CO 342
+				================================================== -->
+
+				<a
+					class="note-item"
+					href={`${base}notes/course-notes/CO_342_notes.pdf`}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+
+					<div class="note-title">
+
+						<span class="note-number">
+							02
+						</span>
+
+
+						<div class="note-name">
+
+							<h2>
+								Introduction to Graph Theory
+							</h2>
+
+							<p>
+								CO 342
+							</p>
+
+						</div>
+
+					</div>
+
+
+					<div class="note-meta">
+						Mathematics · Graph Theory
+					</div>
+
+
+					<div class="note-link">
+						PDF ↗
+					</div>
+
+				</a>
+
+
+
+				<!-- ==================================================
+				     03 — PMATH 450
+				================================================== -->
+
+				<a
+					class="note-item"
+					href={`${base}notes/course-notes/450_Notes.pdf`}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+
+					<div class="note-title">
+
+						<span class="note-number">
+							03
+						</span>
+
+
+						<div class="note-name">
+
+							<h2>
+								Measure Theory
+							</h2>
+
+							<p>
+								PMATH 450
+							</p>
+
+						</div>
+
+					</div>
+
+
+					<div class="note-meta">
+						Mathematics · Combinatorics & Optimization
+					</div>
+
+
+					<div class="note-link">
+						PDF ↗
+					</div>
+
+				</a>
+
+
+
+				<!-- ==================================================
+				     04 — CO 465
+				================================================== -->
+
+				<a
+					class="note-item"
+					href={`${base}notes/course-notes/PMATH465_notes.pdf`}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+
+					<div class="note-title">
+
+						<span class="note-number">
+							04
+						</span>
+
+
+						<div class="note-name">
+
+							<h2>
+								Smooth Manifold
+							</h2>
+
+							<p>
+								PMATH 465
+							</p>
+
+						</div>
+
+					</div>
+
+
+					<div class="note-meta">
+						Mathematics · Combinatorics & Optimization
+					</div>
+
+
+					<div class="note-link">
+						PDF ↗
+					</div>
+
+				</a>
+
+
+			</div>
+
+		</section>
+
+	</main>
+
+
+	<!-- ==================================================
+	     FOOTER
+	================================================== -->
+
+	<footer>
+
+		<div class="footer-name">
+			WEIYOU LI
+		</div>
+
+
+		<div class="footer-links">
+
+			<a
+				href="https://github.com/Shercroft"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				GitHub
+			</a>
+
+
+			<a
+				href="https://www.linkedin.com/in/weiyou-li-032426252/"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				LinkedIn
+			</a>
+
+
+			<a href="mailto:miloliwy@gmail.com">
+				Email
+			</a>
+
+		</div>
+
+
+		<div class="footer-year">
+			© 2026
+		</div>
+
+	</footer>
+
+</body>
+
 </html>
 
+
 <style>
+
+	/* ==================================================
+	   VARIABLES
+	================================================== */
+
 	:root {
-		--serif: Georgia, "Times New Roman", serif;
+		--serif:
+			Georgia,
+			"Times New Roman",
+			serif;
+
+		--sans:
+			Arial,
+			Helvetica,
+			sans-serif;
+
+		--background:
+			#f2f0e9;
+
+		--text:
+			#111111;
+
+		--muted:
+			#68665f;
+
+		--line:
+			#aaa69c;
 	}
+
+
+	/* ==================================================
+	   GLOBAL
+	================================================== */
 
 	* {
-		box-sizing: border-box;
+		box-sizing:
+			border-box;
 	}
+
 
 	html {
-		scroll-behavior: smooth;
+		scroll-behavior:
+			smooth;
 	}
+
 
 	body {
-		margin: 0;
-		background: #f2f0e9;
-		color: #111;
-		font-family: Arial, Helvetica, sans-serif;
-		font-size: 15px;
+		margin:
+			0;
+
+		background:
+			var(--background);
+
+		color:
+			var(--text);
+
+		font-family:
+			var(--sans);
+
+		font-size:
+			15px;
+
+		-webkit-font-smoothing:
+			antialiased;
 	}
+
 
 	a {
-		color: inherit;
-		text-decoration: none;
+		color:
+			inherit;
+
+		text-decoration:
+			none;
 	}
+
+
+	p {
+		margin:
+			0;
+	}
+
+
+	/* ==================================================
+	   NAVIGATION
+	================================================== */
 
 	.navbar {
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 28px 4vw;
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 10;
+		position:
+			absolute;
+
+		top:
+			0;
+
+		left:
+			0;
+
+		z-index:
+			10;
+
+		display:
+			flex;
+
+		align-items:
+			center;
+
+		justify-content:
+			space-between;
+
+		width:
+			100%;
+
+		padding:
+			28px
+			4vw;
 	}
+
 
 	.logo {
-		font-weight: 600;
-		letter-spacing: 0.08em;
+		font-size:
+			14px;
+
+		font-weight:
+			600;
+
+		letter-spacing:
+			0.08em;
 	}
+
 
 	nav {
-		display: flex;
-		gap: 32px;
+		display:
+			flex;
+
+		align-items:
+			center;
+
+		gap:
+			32px;
 	}
+
 
 	nav a {
-		transition: opacity 0.2s ease;
+		font-size:
+			14px;
+
+		transition:
+			opacity
+			0.2s ease;
 	}
+
 
 	nav a:hover {
-		opacity: 0.45;
+		opacity:
+			0.45;
 	}
+
+
+	/* ==================================================
+	   HERO
+	================================================== */
 
 	.hero {
-		min-height: 100vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding: 130px 4vw 50px;
+		display:
+			flex;
+
+		flex-direction:
+			column;
+
+		justify-content:
+			center;
+
+		min-height:
+			100vh;
+
+		padding:
+			130px
+			4vw
+			50px;
+
+		background:
+			radial-gradient(
+				circle at 70% 20%,
+				rgba(207, 219, 225, 0.28),
+				transparent 38%
+			),
+			linear-gradient(
+				180deg,
+				#f4f2eb 0%,
+				#f2f0e9 100%
+			);
 	}
+
 
 	.hero-small {
-		display: flex;
-		justify-content: space-between;
-		text-transform: uppercase;
-		font-size: 11px;
-		letter-spacing: 0.12em;
-		margin-bottom: 35px;
+		display:
+			flex;
+
+		justify-content:
+			space-between;
+
+		margin-bottom:
+			38px;
+
+		font-size:
+			11px;
+
+		text-transform:
+			uppercase;
+
+		letter-spacing:
+			0.12em;
 	}
+
 
 	.hero h1 {
-		font-family: var(--serif);
-		font-size: clamp(70px, 10vw, 165px);
-		font-weight: 400;
-		letter-spacing: -0.055em;
-		line-height: 0.9;
-		margin: 0;
+		max-width:
+			1400px;
+
+		margin:
+			0;
+
+		font-family:
+			var(--serif);
+
+		font-size:
+			clamp(
+				75px,
+				10.5vw,
+				170px
+			);
+
+		font-weight:
+			400;
+
+		line-height:
+			0.88;
+
+		letter-spacing:
+			-0.058em;
 	}
+
 
 	.hero-bottom {
-		margin-top: auto;
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-		line-height: 1.5;
+		display:
+			flex;
+
+		align-items:
+			flex-end;
+
+		justify-content:
+			space-between;
+
+		margin-top:
+			auto;
+
+		padding-top:
+			70px;
+
+		line-height:
+			1.55;
 	}
+
+
+	.hero-bottom p {
+		color:
+			#333;
+
+		font-size:
+			14px;
+	}
+
+
+	.hero-bottom a {
+		padding-bottom:
+			4px;
+
+		border-bottom:
+			1px solid transparent;
+
+		font-size:
+			13px;
+
+		transition:
+			border-color
+			0.2s ease;
+	}
+
+
+	.hero-bottom a:hover {
+		border-color:
+			var(--text);
+	}
+
+
+	/* ==================================================
+	   COURSE NOTES SECTION
+	================================================== */
 
 	.section {
-		padding: 100px 4vw 140px;
-		border-top: 1px solid #aaa69c;
+		padding:
+			100px
+			4vw
+			160px;
+
+		border-top:
+			1px solid
+				var(--line);
 	}
 
-	.section-number {
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		font-size: 11px;
-		margin-bottom: 90px;
+
+	.section-header {
+		display:
+			flex;
+
+		justify-content:
+			space-between;
+
+		align-items:
+			center;
+
+		margin-bottom:
+			90px;
 	}
 
-	.writing-list {
-		border-top: 1px solid #aaa69c;
+
+	.section-number,
+	.section-count {
+		font-size:
+			11px;
+
+		text-transform:
+			uppercase;
+
+		letter-spacing:
+			0.1em;
 	}
 
-	.writing-list a {
-		display: grid;
-		grid-template-columns: 2fr 1fr auto;
-		gap: 30px;
-		padding: 30px 0;
-		border-bottom: 1px solid #aaa69c;
-		transition: padding 0.3s ease;
+
+	.section-count {
+		color:
+			var(--muted);
 	}
 
-	.writing-list a:hover {
-		padding-left: 20px;
+
+	/* ==================================================
+	   NOTES LIST
+	================================================== */
+
+	.notes-list {
+		border-top:
+			1px solid
+				var(--line);
 	}
+
+
+	.note-item {
+		display:
+			grid;
+
+		grid-template-columns:
+			minmax(0, 2fr)
+			minmax(200px, 1fr)
+			auto;
+
+		align-items:
+			center;
+
+		gap:
+			40px;
+
+		min-height:
+			132px;
+
+		padding:
+			30px
+			0;
+
+		border-bottom:
+			1px solid
+				var(--line);
+
+		transition:
+			padding-left
+			0.25s ease,
+			opacity
+			0.2s ease;
+	}
+
+
+	.note-item:hover {
+		padding-left:
+			18px;
+	}
+
+
+	.note-title {
+		display:
+			flex;
+
+		align-items:
+			center;
+
+		gap:
+			34px;
+
+		min-width:
+			0;
+	}
+
+
+	.note-number {
+		flex-shrink:
+			0;
+
+		width:
+			22px;
+
+		font-size:
+			11px;
+
+		color:
+			var(--muted);
+
+		letter-spacing:
+			0.08em;
+	}
+
+
+	.note-name {
+		min-width:
+			0;
+	}
+
+
+	.note-name h2 {
+		margin:
+			0;
+
+		font-family:
+			var(--serif);
+
+		font-size:
+			clamp(
+				28px,
+				2.8vw,
+				42px
+			);
+
+		font-weight:
+			400;
+
+		line-height:
+			1.05;
+
+		letter-spacing:
+			-0.03em;
+	}
+
+
+	.note-name p {
+		margin-top:
+			8px;
+
+		font-size:
+			11px;
+
+		text-transform:
+			uppercase;
+
+		letter-spacing:
+			0.11em;
+
+		color:
+			var(--muted);
+	}
+
+
+	.note-meta {
+		font-size:
+			13px;
+
+		line-height:
+			1.5;
+
+		color:
+			#363531;
+	}
+
+
+	.note-link {
+		font-size:
+			12px;
+
+		letter-spacing:
+			0.03em;
+
+		white-space:
+			nowrap;
+	}
+
+
+	/* ==================================================
+	   FOOTER
+	================================================== */
 
 	footer {
-		padding: 40px 4vw;
-		background: #111;
-		color: #f2f0e9;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		display:
+			flex;
+
+		align-items:
+			center;
+
+		justify-content:
+			space-between;
+
+		padding:
+			42px
+			4vw;
+
+		background:
+			#111;
+
+		color:
+			var(--background);
 	}
 
-	footer div:nth-child(2) {
-		display: flex;
-		gap: 25px;
+
+	.footer-name {
+		font-size:
+			13px;
+
+		font-weight:
+			600;
+
+		letter-spacing:
+			0.08em;
 	}
+
+
+	.footer-links {
+		display:
+			flex;
+
+		gap:
+			26px;
+	}
+
+
+	.footer-links a {
+		font-size:
+			13px;
+
+		transition:
+			opacity
+			0.2s ease;
+	}
+
+
+	.footer-links a:hover {
+		opacity:
+			0.5;
+	}
+
+
+	.footer-year {
+		font-size:
+			13px;
+	}
+
+
+	/* ==================================================
+	   TABLET
+	================================================== */
+
+	@media (max-width: 1000px) {
+
+		.note-item {
+			grid-template-columns:
+				minmax(0, 1.6fr)
+				minmax(160px, 0.8fr)
+				auto;
+
+			gap:
+				25px;
+		}
+
+
+		.note-title {
+			gap:
+				22px;
+		}
+
+	}
+
+
+	/* ==================================================
+	   MOBILE
+	================================================== */
 
 	@media (max-width: 800px) {
+
 		.navbar {
-			align-items: flex-start;
+			align-items:
+				flex-start;
+
+			padding-top:
+				24px;
 		}
+
 
 		nav {
-			flex-direction: column;
-			gap: 8px;
+			flex-direction:
+				column;
+
+			align-items:
+				flex-end;
+
+			gap:
+				8px;
 		}
+
+
+		.hero {
+			min-height:
+				92vh;
+
+			padding-top:
+				150px;
+		}
+
 
 		.hero h1 {
-			font-size: 18vw;
+			font-size:
+				18vw;
 		}
 
-		.writing-list a {
-			grid-template-columns: 1fr;
+
+		.hero-bottom {
+			gap:
+				30px;
 		}
+
+
+		.section {
+			padding-top:
+				75px;
+
+			padding-bottom:
+				110px;
+		}
+
+
+		.section-header {
+			margin-bottom:
+				55px;
+		}
+
+
+		.note-item {
+			grid-template-columns:
+				1fr;
+
+			gap:
+				14px;
+
+			min-height:
+				unset;
+
+			padding:
+				28px
+				0;
+		}
+
+
+		.note-item:hover {
+			padding-left:
+				0;
+		}
+
+
+		.note-title {
+			gap:
+				18px;
+		}
+
+
+		.note-name h2 {
+			font-size:
+				30px;
+		}
+
+
+		.note-meta,
+		.note-link {
+			padding-left:
+				40px;
+		}
+
 
 		footer {
-			flex-direction: column;
-			align-items: flex-start;
-			gap: 30px;
+			flex-direction:
+				column;
+
+			align-items:
+				flex-start;
+
+			gap:
+				28px;
 		}
+
 	}
+
+
+	/* ==================================================
+	   SMALL MOBILE
+	================================================== */
+
+	@media (max-width: 500px) {
+
+		.hero-small {
+			gap:
+				20px;
+		}
+
+
+		.hero-bottom {
+			flex-direction:
+				column;
+
+			align-items:
+				flex-start;
+		}
+
+
+		.section-header {
+			align-items:
+				flex-start;
+
+			gap:
+				20px;
+		}
+
+	}
+
 </style>

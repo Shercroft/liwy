@@ -3,44 +3,172 @@ import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 ---
 
 <ProjectLayout
-	title="Graduate Admission Modeling"
-	category="Statistics · Machine Learning"
+	title="Graduate Admission Prediction"
+	category="Statistics · Neural Networks · Regression"
 	year="2026"
-	summary="A comparative modeling study examining neural-network and regression approaches to graduate-admission prediction."
+	summary="A comparative modeling study testing whether a neural network adds predictive value over logistic regression on structured graduate-admission data."
 >
+
+	<!-- =====================================================
+	     01 — RESEARCH QUESTION
+	===================================================== -->
 
 	<div class="project-block">
 
 		<div class="project-label">
-			Overview
+			Research Question
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				The broader problem
+			</p>
+
+			<h2>
+				When does a neural network add value over a simpler statistical model?
+			</h2>
+
+			<p class="lead">
+				This project compares an artificial neural network with
+				logistic regression for classifying applicants with a
+				high predicted chance of graduate admission.
+			</p>
+
+			<p>
+				Both models are trained on the same structured applicant
+				features, allowing the comparison to focus on model choice
+				rather than differences in the underlying data.
+			</p>
+
+			<p>
+				The central question is therefore not simply which model
+				achieves a higher score, but whether additional model
+				complexity produces a meaningful predictive advantage.
+			</p>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     02 — WHY IT MATTERS
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			Why It Matters
 		</div>
 
 		<div class="project-main">
 
 			<h2>
-				Comparing statistical and neural approaches.
+				More complex does not always mean more useful.
 			</h2>
 
 			<p>
-				This project studies graduate-admission prediction
-				through two different modeling approaches: an
-				artificial neural network and a regression model.
+				Neural networks can represent nonlinear relationships,
+				but structured tabular datasets do not always require
+				high-capacity models.
 			</p>
 
 			<p>
-				The goal is to compare their predictive performance
-				and examine how a conventional statistical model
-				differs from a machine-learning approach on the
-				same dataset.
+				A simpler statistical model may achieve comparable
+				predictive performance while remaining easier to train,
+				interpret and reproduce.
 			</p>
 
-			<div class="project-tags">
+			<p>
+				Comparing both approaches on the same prediction task
+				provides a practical example of model selection:
+				complexity should be justified by measurable improvement.
+			</p>
 
-				<span>Statistics</span>
-				<span>Neural Networks</span>
-				<span>Regression</span>
-				<span>Python</span>
-				<span>Data Analysis</span>
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     03 — BIG QUESTIONS
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			Big Questions
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				The analysis in three questions
+			</p>
+
+			<h2>
+				Three questions guided the comparison.
+			</h2>
+
+
+			<div class="question-grid">
+
+				<div class="question-card">
+
+					<span class="question-number">
+						01
+					</span>
+
+					<h3>
+						Can structured applicant characteristics identify high-admission-chance cases?
+					</h3>
+
+					<p>
+						Use academic, institutional and research-related
+						features to construct a binary classification task
+						from the original admission-chance variable.
+					</p>
+
+				</div>
+
+
+				<div class="question-card">
+
+					<span class="question-number">
+						02
+					</span>
+
+					<h3>
+						Does a neural network outperform logistic regression on the same features?
+					</h3>
+
+					<p>
+						Train both models under a common train-validation
+						split and compare their predictive behavior using
+						classification metrics.
+					</p>
+
+				</div>
+
+
+				<div class="question-card question-wide">
+
+					<span class="question-number">
+						03
+					</span>
+
+					<h3>
+						What does additional model complexity actually buy us?
+					</h3>
+
+					<p>
+						Compare predictive performance against the added
+						training and modeling complexity of the neural-network
+						approach.
+					</p>
+
+				</div>
 
 			</div>
 
@@ -48,6 +176,658 @@ import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 
 	</div>
 
+
+	<!-- =====================================================
+	     04 — DATA
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			Data
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				Structured applicant profiles
+			</p>
+
+			<h2>
+				Seven inputs, one prediction task.
+			</h2>
+
+			<p>
+				The analysis uses the Graduate Admissions dataset and
+				constructs the prediction problem from seven applicant-level
+				features.
+			</p>
+
+
+			<div class="feature-grid">
+
+				<div>
+					<span>01</span>
+					<strong>GRE Score</strong>
+				</div>
+
+				<div>
+					<span>02</span>
+					<strong>TOEFL Score</strong>
+				</div>
+
+				<div>
+					<span>03</span>
+					<strong>University Rating</strong>
+				</div>
+
+				<div>
+					<span>04</span>
+					<strong>SOP</strong>
+				</div>
+
+				<div>
+					<span>05</span>
+					<strong>LOR</strong>
+				</div>
+
+				<div>
+					<span>06</span>
+					<strong>CGPA</strong>
+				</div>
+
+				<div>
+					<span>07</span>
+					<strong>Research</strong>
+				</div>
+
+			</div>
+
+
+			<div class="target-card">
+
+				<div class="target-number">
+					Target
+				</div>
+
+				<div>
+
+					<h3>
+						High admission chance
+					</h3>
+
+					<p>
+						The continuous <em>Chance of Admit</em> variable
+						is converted into a binary classification target
+						using a threshold of 0.80.
+					</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     05 — PREPROCESSING
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			Preparation
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				Keeping the comparison consistent
+			</p>
+
+			<h2>
+				A shared experimental setup.
+			</h2>
+
+			<p>
+				The models use the same seven predictors and the same
+				train-validation partition so their performance can be
+				compared on equal footing.
+			</p>
+
+
+			<div class="setup-grid">
+
+				<div>
+
+					<span>
+						Split
+					</span>
+
+					<strong>
+						80 / 20
+					</strong>
+
+					<p>
+						Training and validation split with stratification
+						on the binary target.
+					</p>
+
+				</div>
+
+
+				<div>
+
+					<span>
+						Scaling
+					</span>
+
+					<strong>
+						StandardScaler
+					</strong>
+
+					<p>
+						Features are standardized before model fitting.
+					</p>
+
+				</div>
+
+
+				<div>
+
+					<span>
+						Evaluation
+					</span>
+
+					<strong>
+						Accuracy + AUC
+					</strong>
+
+					<p>
+						Classification performance is evaluated using
+						accuracy and ROC-AUC behavior.
+					</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     06 — MODELS
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			Models
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				Complexity versus simplicity
+			</p>
+
+			<h2>
+				Two approaches to the same problem.
+			</h2>
+
+
+			<div class="model-grid">
+
+				<div class="model-card">
+
+					<div class="model-top">
+
+						<span>
+							Model 01
+						</span>
+
+						<span>
+							Statistical baseline
+						</span>
+
+					</div>
+
+
+					<h3>
+						Logistic Regression
+					</h3>
+
+					<p>
+						A conventional linear classification model provides
+						a strong baseline for determining whether a more
+						flexible architecture is actually necessary.
+					</p>
+
+
+					<div class="model-tags">
+
+						<span>Linear decision function</span>
+						<span>Probability output</span>
+						<span>ROC evaluation</span>
+
+					</div>
+
+				</div>
+
+
+				<div class="model-card">
+
+					<div class="model-top">
+
+						<span>
+							Model 02
+						</span>
+
+						<span>
+							Neural model
+						</span>
+
+					</div>
+
+
+					<h3>
+						Artificial Neural Network
+					</h3>
+
+					<p>
+						A compact feed-forward neural network introduces
+						nonlinear transformations while keeping the architecture
+						appropriate for a small structured feature space.
+					</p>
+
+
+					<div class="architecture">
+
+						<div>
+							<span>Input</span>
+							<strong>7</strong>
+						</div>
+
+						<div class="architecture-arrow">
+							→
+						</div>
+
+						<div>
+							<span>Hidden</span>
+							<strong>4</strong>
+						</div>
+
+						<div class="architecture-arrow">
+							→
+						</div>
+
+						<div>
+							<span>Hidden</span>
+							<strong>2</strong>
+						</div>
+
+						<div class="architecture-arrow">
+							→
+						</div>
+
+						<div>
+							<span>Output</span>
+							<strong>1</strong>
+						</div>
+
+					</div>
+
+
+					<div class="model-tags">
+
+						<span>ReLU</span>
+						<span>Sigmoid</span>
+						<span>Adam</span>
+						<span>Binary Cross-Entropy</span>
+						<span>Early Stopping</span>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     07 — RESULTS
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			Results
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				Validation performance
+			</p>
+
+			<h2>
+				The simpler model remained highly competitive.
+			</h2>
+
+			<p>
+				On the validation split, logistic regression achieved the
+				same accuracy as the best neural-network validation accuracy
+				recorded during training.
+			</p>
+
+
+			<div class="result-grid">
+
+				<div class="result-card">
+
+					<span class="result-label">
+						Logistic Regression
+					</span>
+
+					<div class="result-value">
+						94%
+					</div>
+
+					<p>
+						Validation accuracy
+					</p>
+
+				</div>
+
+
+				<div class="result-card">
+
+					<span class="result-label">
+						Logistic Regression
+					</span>
+
+					<div class="result-value">
+						0.976
+					</div>
+
+					<p>
+						Validation ROC-AUC
+					</p>
+
+				</div>
+
+
+				<div class="result-card">
+
+					<span class="result-label">
+						Neural Network
+					</span>
+
+					<div class="result-value">
+						94%
+					</div>
+
+					<p>
+						Best validation accuracy
+					</p>
+
+				</div>
+
+
+				<div class="result-card">
+
+					<span class="result-label">
+						Neural Network
+					</span>
+
+					<div class="result-value">
+						90.7%
+					</div>
+
+					<p>
+						Mean validation accuracy during training
+					</p>
+
+				</div>
+
+			</div>
+
+
+			<div class="result-interpretation">
+
+				<span>
+					Interpretation
+				</span>
+
+				<p>
+					For this dataset and experimental setup, the neural
+					network did not demonstrate a clear validation-accuracy
+					advantage over logistic regression.
+				</p>
+
+				<p>
+					The result illustrates an important modeling principle:
+					a more flexible model is not automatically a better model,
+					particularly for relatively low-dimensional structured data.
+				</p>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     08 — PIPELINE
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			The Pipeline
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				End-to-end workflow
+			</p>
+
+			<h2>
+				From applicant data to model comparison.
+			</h2>
+
+
+			<div class="pipeline">
+
+				<div class="pipeline-step">
+
+					<span class="pipeline-number">
+						01
+					</span>
+
+					<div class="pipeline-content">
+
+						<h3>
+							Explore
+						</h3>
+
+						<p>
+							Inspect the applicant variables and the
+							distribution of admission chance.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="pipeline-step">
+
+					<span class="pipeline-number">
+						02
+					</span>
+
+					<div class="pipeline-content">
+
+						<h3>
+							Define
+						</h3>
+
+						<p>
+							Convert admission chance into a binary
+							classification target.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="pipeline-step">
+
+					<span class="pipeline-number">
+						03
+					</span>
+
+					<div class="pipeline-content">
+
+						<h3>
+							Prepare
+						</h3>
+
+						<p>
+							Split the data and standardize the predictor
+							variables.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="pipeline-step">
+
+					<span class="pipeline-number">
+						04
+					</span>
+
+					<div class="pipeline-content">
+
+						<h3>
+							Train
+						</h3>
+
+						<p>
+							Fit logistic-regression and neural-network
+							classifiers using the same feature set.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="pipeline-step">
+
+					<span class="pipeline-number">
+						05
+					</span>
+
+					<div class="pipeline-content">
+
+						<h3>
+							Evaluate
+						</h3>
+
+						<p>
+							Compare validation accuracy, AUC and ROC
+							behavior.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="pipeline-step">
+
+					<span class="pipeline-number">
+						06
+					</span>
+
+					<div class="pipeline-content">
+
+						<h3>
+							Interpret
+						</h3>
+
+						<p>
+							Assess whether additional model complexity
+							provides a meaningful advantage.
+						</p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     09 — TOOLS
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			Tools & Methods
+		</div>
+
+		<div class="project-main">
+
+			<h2>
+				Statistical modeling meets neural learning.
+			</h2>
+
+
+			<div class="project-tags tools">
+
+				<span>Python</span>
+				<span>Pandas</span>
+				<span>NumPy</span>
+				<span>Scikit-learn</span>
+				<span>TensorFlow</span>
+				<span>Keras</span>
+				<span>Logistic Regression</span>
+				<span>Neural Networks</span>
+				<span>Standardization</span>
+				<span>ROC-AUC</span>
+				<span>Early Stopping</span>
+				<span>Data Visualization</span>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     10 — DELIVERABLES
+	===================================================== -->
 
 	<div class="project-block">
 
@@ -57,46 +837,1131 @@ import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 
 		<div class="project-main">
 
+			<p class="eyebrow">
+				Code + analysis + report
+			</p>
+
 			<h2>
-				Analysis, implementation and report.
+				Explore the complete project.
 			</h2>
 
 			<p>
-				The repository contains the complete analysis notebook
-				along with a written report documenting the methodology
-				and results.
+				The repository contains the implementation notebook
+				and a written report documenting the methodology,
+				comparison and results.
 			</p>
 
-			<div class="project-links">
 
-				<a
-					href="https://github.com/Shercroft/Graduate-Admission"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					View GitHub ↗
-				</a>
+			<div class="deliverable-card">
 
-				<a
-					href="https://github.com/Shercroft/Graduate-Admission/blob/main/Chance_of_Admit_Report.pdf"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Read Report ↗
-				</a>
+				<div>
 
-				<a
-					href="https://github.com/Shercroft/Graduate-Admission/blob/main/chance-of-admit-via-ann-lr.ipynb"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					View Notebook ↗
-				</a>
+					<span class="deliverable-label">
+						Project Repository
+					</span>
+
+					<h3>
+						Graduate Admission Prediction
+					</h3>
+
+					<p>
+						Comparative analysis of logistic regression and
+						an artificial neural network on structured
+						graduate-admission data.
+					</p>
+
+				</div>
+
+
+				<div class="project-links">
+
+					<a
+						href="https://github.com/Shercroft/Graduate-Admission"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						GitHub ↗
+					</a>
+
+					<a
+						href="https://github.com/Shercroft/Graduate-Admission/blob/main/Chance_of_Admit_Report.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Read Report ↗
+					</a>
+
+					<a
+						href="https://github.com/Shercroft/Graduate-Admission/blob/main/chance-of-admit-via-ann-lr.ipynb"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						View Notebook ↗
+					</a>
+
+				</div>
 
 			</div>
 
 		</div>
 
 	</div>
+
+
+	<!-- =====================================================
+	     11 — TAKEAWAY
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			Takeaway
+		</div>
+
+		<div class="project-main">
+
+			<h2>
+				Use complexity when the problem earns it.
+			</h2>
+
+			<p class="lead">
+				The main lesson was not that one class of models is
+				universally better than another.
+			</p>
+
+			<p>
+				Rather, model complexity should be evaluated relative to
+				the structure of the data and the improvement it actually
+				provides.
+			</p>
+
+			<p>
+				On this task, logistic regression remained highly
+				competitive with the neural network, demonstrating the
+				value of establishing a strong statistical baseline before
+				moving to a more complex architecture.
+			</p>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     PAGE-SPECIFIC CSS
+	===================================================== -->
+
+	<style>
+
+		/* ==================================================
+		   GENERAL
+		================================================== */
+
+		.eyebrow {
+			margin:
+				0
+				0
+				20px !important;
+
+			font-size:
+				11px !important;
+
+			line-height:
+				1 !important;
+
+			letter-spacing:
+				0.12em;
+
+			text-transform:
+				uppercase;
+
+			color:
+				#666;
+		}
+
+
+		.lead {
+			max-width:
+				800px !important;
+
+			font-size:
+				21px !important;
+
+			line-height:
+				1.6 !important;
+		}
+
+
+		/* ==================================================
+		   BIG QUESTIONS
+		================================================== */
+
+		.question-grid {
+			display:
+				grid;
+
+			grid-template-columns:
+				repeat(
+					2,
+					minmax(0, 1fr)
+				);
+
+			gap:
+				1px;
+
+			margin-top:
+				55px;
+
+			background:
+				#aaa69c;
+
+			border:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.question-card {
+			min-height:
+				365px;
+
+			padding:
+				38px
+				35px;
+
+			background:
+				#f2f0e9;
+		}
+
+
+		.question-wide {
+			grid-column:
+				1 / -1;
+
+			min-height:
+				300px;
+		}
+
+
+		.question-number {
+			display:
+				block;
+
+			margin-bottom:
+				50px;
+
+			font-size:
+				11px;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.question-card h3 {
+			max-width:
+				520px;
+
+			margin:
+				0
+				0
+				25px;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				clamp(
+					23px,
+					2vw,
+					33px
+				);
+
+			font-weight:
+				400;
+
+			line-height:
+				1.12;
+
+			letter-spacing:
+				-0.025em;
+		}
+
+
+		.question-card p {
+			max-width:
+				500px;
+
+			margin:
+				0 !important;
+
+			font-size:
+				14px !important;
+
+			line-height:
+				1.65 !important;
+		}
+
+
+		/* ==================================================
+		   FEATURES
+		================================================== */
+
+		.feature-grid {
+			display:
+				grid;
+
+			grid-template-columns:
+				repeat(
+					2,
+					minmax(0, 1fr)
+				);
+
+			margin-top:
+				50px;
+
+			border-top:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.feature-grid > div {
+			display:
+				grid;
+
+			grid-template-columns:
+				45px
+				1fr;
+
+			gap:
+				15px;
+
+			padding:
+				22px
+				0;
+
+			border-bottom:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.feature-grid > div:nth-child(odd) {
+			padding-right:
+				30px;
+		}
+
+
+		.feature-grid > div:nth-child(even) {
+			padding-left:
+				30px;
+
+			border-left:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.feature-grid span {
+			padding-top:
+				4px;
+
+			font-size:
+				10px;
+
+			color:
+				#777;
+
+			letter-spacing:
+				0.08em;
+		}
+
+
+		.feature-grid strong {
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				24px;
+
+			font-weight:
+				400;
+		}
+
+
+		.target-card {
+			display:
+				grid;
+
+			grid-template-columns:
+				100px
+				1fr;
+
+			gap:
+				30px;
+
+			margin-top:
+				40px;
+
+			padding:
+				30px;
+
+			border:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.target-number {
+			padding-top:
+				6px;
+
+			font-size:
+				10px;
+
+			text-transform:
+				uppercase;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.target-card h3 {
+			margin:
+				0
+				0
+				10px;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				30px;
+
+			font-weight:
+				400;
+		}
+
+
+		.target-card p {
+			margin:
+				0 !important;
+
+			font-size:
+				14px !important;
+		}
+
+
+		/* ==================================================
+		   EXPERIMENTAL SETUP
+		================================================== */
+
+		.setup-grid {
+			display:
+				grid;
+
+			grid-template-columns:
+				repeat(
+					3,
+					1fr
+				);
+
+			gap:
+				1px;
+
+			margin-top:
+				50px;
+
+			background:
+				#aaa69c;
+
+			border:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.setup-grid > div {
+			min-height:
+				220px;
+
+			padding:
+				28px;
+
+			background:
+				#f2f0e9;
+		}
+
+
+		.setup-grid span {
+			display:
+				block;
+
+			margin-bottom:
+				45px;
+
+			font-size:
+				10px;
+
+			text-transform:
+				uppercase;
+
+			letter-spacing:
+				0.12em;
+
+			color:
+				#777;
+		}
+
+
+		.setup-grid strong {
+			display:
+				block;
+
+			margin-bottom:
+				16px;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				30px;
+
+			font-weight:
+				400;
+		}
+
+
+		.setup-grid p {
+			margin:
+				0 !important;
+
+			font-size:
+				13px !important;
+
+			line-height:
+				1.6 !important;
+		}
+
+
+		/* ==================================================
+		   MODEL COMPARISON
+		================================================== */
+
+		.model-grid {
+			display:
+				grid;
+
+			grid-template-columns:
+				repeat(
+					2,
+					minmax(0, 1fr)
+				);
+
+			gap:
+				16px;
+
+			margin-top:
+				50px;
+		}
+
+
+		.model-card {
+			padding:
+				32px;
+
+			border:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.model-top {
+			display:
+				flex;
+
+			justify-content:
+				space-between;
+
+			gap:
+				20px;
+
+			margin-bottom:
+				55px;
+
+			font-size:
+				10px;
+
+			text-transform:
+				uppercase;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.model-card h3 {
+			margin:
+				0
+				0
+				22px;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				clamp(
+					30px,
+					3vw,
+					44px
+				);
+
+			font-weight:
+				400;
+
+			line-height:
+				1;
+		}
+
+
+		.model-card > p {
+			margin:
+				0 !important;
+
+			font-size:
+				14px !important;
+
+			line-height:
+				1.65 !important;
+		}
+
+
+		.model-tags {
+			display:
+				flex;
+
+			flex-wrap:
+				wrap;
+
+			gap:
+				8px;
+
+			margin-top:
+				35px;
+		}
+
+
+		.model-tags span {
+			padding:
+				7px
+				11px;
+
+			border:
+				1px solid
+				#aaa69c;
+
+			border-radius:
+				999px;
+
+			font-size:
+				11px;
+		}
+
+
+		.architecture {
+			display:
+				flex;
+
+			align-items:
+				center;
+
+			gap:
+				12px;
+
+			margin-top:
+				35px;
+
+			padding:
+				25px
+				0;
+
+			border-top:
+				1px solid
+				#aaa69c;
+
+			border-bottom:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.architecture > div:not(.architecture-arrow) {
+			flex:
+				1;
+		}
+
+
+		.architecture span {
+			display:
+				block;
+
+			margin-bottom:
+				7px;
+
+			font-size:
+				9px;
+
+			text-transform:
+				uppercase;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.architecture strong {
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				28px;
+
+			font-weight:
+				400;
+		}
+
+
+		.architecture-arrow {
+			color:
+				#888;
+
+			font-size:
+				14px;
+		}
+
+
+		/* ==================================================
+		   RESULTS
+		================================================== */
+
+		.result-grid {
+			display:
+				grid;
+
+			grid-template-columns:
+				repeat(
+					2,
+					minmax(0, 1fr)
+				);
+
+			gap:
+				1px;
+
+			margin-top:
+				50px;
+
+			background:
+				#aaa69c;
+
+			border:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.result-card {
+			min-height:
+				240px;
+
+			padding:
+				30px;
+
+			background:
+				#f2f0e9;
+		}
+
+
+		.result-label {
+			display:
+				block;
+
+			font-size:
+				10px;
+
+			text-transform:
+				uppercase;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.result-value {
+			margin:
+				38px
+				0
+				12px;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				clamp(
+					48px,
+					6vw,
+					78px
+				);
+
+			line-height:
+				0.9;
+
+			letter-spacing:
+				-0.04em;
+		}
+
+
+		.result-card p {
+			margin:
+				0 !important;
+
+			font-size:
+				13px !important;
+
+			color:
+				#555;
+		}
+
+
+		.result-interpretation {
+			margin-top:
+				40px;
+
+			padding-top:
+				28px;
+
+			border-top:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.result-interpretation > span {
+			display:
+				block;
+
+			margin-bottom:
+				20px;
+
+			font-size:
+				10px;
+
+			text-transform:
+				uppercase;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		/* ==================================================
+		   PIPELINE
+		================================================== */
+
+		.pipeline {
+			margin-top:
+				55px;
+
+			border-top:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.pipeline-step {
+			display:
+				grid;
+
+			grid-template-columns:
+				55px
+				1fr;
+
+			gap:
+				28px;
+
+			padding:
+				29px
+				0;
+
+			border-bottom:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.pipeline-number {
+			padding-top:
+				6px;
+
+			font-size:
+				11px;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.pipeline-content {
+			display:
+				grid;
+
+			grid-template-columns:
+				180px
+				1fr;
+
+			gap:
+				40px;
+
+			align-items:
+				baseline;
+		}
+
+
+		.pipeline-content h3 {
+			margin:
+				0;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				28px;
+
+			font-weight:
+				400;
+
+			line-height:
+				1;
+
+			letter-spacing:
+				-0.025em;
+		}
+
+
+		.pipeline-content p {
+			max-width:
+				520px;
+
+			margin:
+				0 !important;
+
+			font-size:
+				15px !important;
+
+			line-height:
+				1.6 !important;
+
+			color:
+				#333;
+		}
+
+
+		/* ==================================================
+		   DELIVERABLES
+		================================================== */
+
+		.deliverable-card {
+			margin-top:
+				45px;
+
+			padding:
+				32px;
+
+			border:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.deliverable-label {
+			display:
+				block;
+
+			margin-bottom:
+				18px;
+
+			font-size:
+				10px;
+
+			text-transform:
+				uppercase;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.deliverable-card h3 {
+			margin:
+				0
+				0
+				18px;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				clamp(
+					28px,
+					3vw,
+					42px
+				);
+
+			font-weight:
+				400;
+		}
+
+
+		.deliverable-card p {
+			margin:
+				0 !important;
+
+			font-size:
+				14px !important;
+		}
+
+
+		.tools {
+			max-width:
+				900px;
+		}
+
+
+		/* ==================================================
+		   MOBILE
+		================================================== */
+
+		@media (max-width: 800px) {
+
+			.question-grid,
+			.feature-grid,
+			.setup-grid,
+			.model-grid,
+			.result-grid {
+				grid-template-columns:
+					1fr;
+			}
+
+
+			.question-wide {
+				grid-column:
+					auto;
+			}
+
+
+			.question-card {
+				min-height:
+					auto;
+			}
+
+
+			.feature-grid > div:nth-child(odd),
+			.feature-grid > div:nth-child(even) {
+				padding-left:
+					0;
+
+				padding-right:
+					0;
+
+				border-left:
+					none;
+			}
+
+
+			.target-card {
+				grid-template-columns:
+					1fr;
+
+				gap:
+					15px;
+			}
+
+
+			.architecture {
+				flex-wrap:
+					wrap;
+			}
+
+
+			.pipeline-step {
+				grid-template-columns:
+					35px
+					1fr;
+
+				gap:
+					15px;
+			}
+
+
+			.pipeline-content {
+				grid-template-columns:
+					1fr;
+
+				gap:
+					10px;
+			}
+
+
+			.pipeline-content h3 {
+				font-size:
+					24px;
+			}
+
+		}
+
+	</style>
 
 </ProjectLayout>

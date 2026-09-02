@@ -3,44 +3,191 @@ import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 ---
 
 <ProjectLayout
-	title="Beyond VaR"
-	category="Survival Analysis · Quantitative Finance"
+	title="ETF Tail Risk & Recovery"
+	category="VaR · Survival Analysis · Quantitative Finance"
 	year="2026"
-	summary="A quantitative risk framework that extends Value at Risk from the magnitude of losses to the duration of post-loss recovery."
+	summary="A quantitative risk framework that studies both the magnitude of ETF downside losses and the duration of post-loss recovery."
 >
+
+	<!-- =====================================================
+	     01 — RESEARCH QUESTION
+	===================================================== -->
 
 	<div class="project-block">
 
 		<div class="project-label">
-			Overview
+			Research Question
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				The broader problem
+			</p>
+
+			<h2>
+				How should downside risk be measured when both loss magnitude and recovery time matter?
+			</h2>
+
+			<p class="lead">
+				Traditional Value at Risk summarizes how severe a loss
+				may be over a given horizon, but it says little about
+				what happens after that loss occurs.
+			</p>
+
+			<p>
+				This project extends the risk question beyond the size
+				of a downside event by also examining post-loss recovery
+				as a duration problem.
+			</p>
+
+			<p>
+				The framework combines rolling VaR estimation,
+				backtesting, market-stress information and event-level
+				recovery data to study ETF tail risk from both a
+				magnitude and time perspective.
+			</p>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     02 — WHY IT MATTERS
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			Why It Matters
 		</div>
 
 		<div class="project-main">
 
 			<h2>
-				Risk is not only how much you lose.
+				A loss is not fully described by how large it is.
 			</h2>
 
 			<p>
-				Beyond VaR studies both the magnitude of abnormal
-				ETF losses and how long it takes an asset to recover
-				after those losses occur.
+				Two investments can experience losses of similar magnitude
+				while exposing investors to very different recovery paths.
 			</p>
 
 			<p>
-				The project combines conventional Value at Risk
-				methodology with survival analysis to provide a
-				duration-based perspective on financial risk.
+				One may recover quickly. Another may remain below its
+				pre-loss level for an extended period.
 			</p>
 
-			<div class="project-tags">
+			<p>
+				By combining tail-loss estimation with recovery duration,
+				the project asks a broader risk-management question:
+				not only <em>how much might be lost?</em>, but also
+				<em>how long might the loss matter?</em>
+			</p>
 
-				<span>Survival Analysis</span>
-				<span>Value at Risk</span>
-				<span>Quantitative Finance</span>
-				<span>Python</span>
-				<span>ETFs</span>
-				<span>Risk Modeling</span>
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     03 — BIG QUESTIONS
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			Big Questions
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				The analysis in four questions
+			</p>
+
+			<h2>
+				Four questions define the framework.
+			</h2>
+
+
+			<div class="question-grid">
+
+				<div class="question-card">
+
+					<span class="question-number">
+						01
+					</span>
+
+					<h3>
+						How sensitive is estimated tail risk to the choice of VaR method?
+					</h3>
+
+					<p>
+						Compare historical, parametric-normal and
+						Monte Carlo VaR under the same rolling
+						forecasting framework.
+					</p>
+
+				</div>
+
+
+				<div class="question-card">
+
+					<span class="question-number">
+						02
+					</span>
+
+					<h3>
+						Are VaR violations correctly calibrated and independently distributed?
+					</h3>
+
+					<p>
+						Backtest whether exception rates align with
+						the theoretical tail probability and whether
+						violations cluster over time.
+					</p>
+
+				</div>
+
+
+				<div class="question-card">
+
+					<span class="question-number">
+						03
+					</span>
+
+					<h3>
+						How do market-stress conditions relate to downside events?
+					</h3>
+
+					<p>
+						Incorporate VIX as a market-stress covariate
+						and examine the environment surrounding
+						VaR violations.
+					</p>
+
+				</div>
+
+
+				<div class="question-card">
+
+					<span class="question-number">
+						04
+					</span>
+
+					<h3>
+						How long does recovery take after an abnormal downside event?
+					</h3>
+
+					<p>
+						Transform VaR violations into event-level
+						duration observations that can support
+						survival-based recovery analysis.
+					</p>
+
+				</div>
 
 			</div>
 
@@ -49,54 +196,771 @@ import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 	</div>
 
 
+	<!-- =====================================================
+	     04 — RESEARCH MAP
+	===================================================== -->
+
 	<div class="project-block">
 
 		<div class="project-label">
-			Methodology
+			Research Map
 		</div>
 
 		<div class="project-main">
 
 			<h2>
-				From loss events to recovery duration.
+				Four connected layers of risk analysis.
 			</h2>
 
-			<p>
-				The framework analyzes daily returns for SPY, QQQ,
-				GLD and VOO and identifies abnormal downside events
-				using rolling one-day VaR estimates.
-			</p>
 
-			<ul>
-				<li>
-					Historical Value at Risk
-				</li>
+			<div class="research-map">
 
-				<li>
-					Parametric Normal Value at Risk
-				</li>
+				<div class="map-row">
 
-				<li>
-					Monte Carlo Value at Risk
-				</li>
+					<span>01</span>
 
-				<li>
-					Kupiec and Christoffersen VaR backtesting
-				</li>
+					<div>
 
-				<li>
-					VIX as a market-stress covariate
-				</li>
+						<strong>
+							Return diagnostics
+						</strong>
 
-				<li>
-					Event-level data preparation for survival analysis
-				</li>
-			</ul>
+						<p>
+							Study return distributions, tail behavior
+							and departures from normality.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="map-row">
+
+					<span>02</span>
+
+					<div>
+
+						<strong>
+							VaR estimation
+						</strong>
+
+						<p>
+							Generate one-day-ahead tail-risk forecasts
+							using multiple estimation methods.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="map-row">
+
+					<span>03</span>
+
+					<div>
+
+						<strong>
+							VaR backtesting
+						</strong>
+
+						<p>
+							Evaluate exception frequency and temporal
+							independence using formal statistical tests.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="map-row">
+
+					<span>04</span>
+
+					<div>
+
+						<strong>
+							Post-loss recovery
+						</strong>
+
+						<p>
+							Convert downside events into duration data
+							for subsequent survival-oriented analysis.
+						</p>
+
+					</div>
+
+				</div>
+
+			</div>
 
 		</div>
 
 	</div>
 
+
+	<!-- =====================================================
+	     05 — DATA & EXPERIMENTAL SETUP
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			Data & Setup
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				ETF risk universe
+			</p>
+
+			<h2>
+				Equities, technology, gold and market stress.
+			</h2>
+
+			<p>
+				The baseline framework studies four widely traded ETFs
+				and uses VIX as a separate measure of market stress.
+			</p>
+
+
+			<div class="asset-grid">
+
+				<div>
+
+					<span>
+						SPY
+					</span>
+
+					<strong>
+						S&P 500
+					</strong>
+
+					<p>
+						Broad U.S. equity-market exposure.
+					</p>
+
+				</div>
+
+
+				<div>
+
+					<span>
+						QQQ
+					</span>
+
+					<strong>
+						Nasdaq-100
+					</strong>
+
+					<p>
+						Technology-heavy growth exposure.
+					</p>
+
+				</div>
+
+
+				<div>
+
+					<span>
+						GLD
+					</span>
+
+					<strong>
+						Gold
+					</strong>
+
+					<p>
+						Alternative-asset and hedge exposure.
+					</p>
+
+				</div>
+
+
+				<div>
+
+					<span>
+						VOO
+					</span>
+
+					<strong>
+						S&P 500
+					</strong>
+
+					<p>
+						Alternative broad-market ETF exposure.
+					</p>
+
+				</div>
+
+			</div>
+
+
+			<div class="setup-grid">
+
+				<div>
+
+					<span>
+						VaR confidence
+					</span>
+
+					<strong>
+						95%
+					</strong>
+
+					<p>
+						Baseline lower-tail confidence level.
+					</p>
+
+				</div>
+
+
+				<div>
+
+					<span>
+						Rolling window
+					</span>
+
+					<strong>
+						250
+					</strong>
+
+					<p>
+						Prior trading days used for each VaR forecast.
+					</p>
+
+				</div>
+
+
+				<div>
+
+					<span>
+						Monte Carlo
+					</span>
+
+					<strong>
+						10,000
+					</strong>
+
+					<p>
+						Simulated returns per forecast date.
+					</p>
+
+				</div>
+
+
+				<div>
+
+					<span>
+						Stress covariate
+					</span>
+
+					<strong>
+						VIX
+					</strong>
+
+					<p>
+						Market-volatility measure aligned to downside events.
+					</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     06 — VaR MODELS
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			01 — VaR
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				Tail-loss estimation
+			</p>
+
+			<h2>
+				Three ways to estimate the same downside threshold.
+			</h2>
+
+			<p>
+				Each method estimates a one-day-ahead VaR threshold
+				using only information available before the realized
+				return.
+			</p>
+
+			<p>
+				Using the same rolling window makes differences between
+				methods easier to interpret as differences in modeling
+				assumptions rather than information availability.
+			</p>
+
+
+			<div class="method-grid">
+
+				<div class="method-card">
+
+					<span>
+						Method 01
+					</span>
+
+					<h3>
+						Historical VaR
+					</h3>
+
+					<p>
+						Uses the empirical lower-tail quantile of
+						recent observed returns without imposing a
+						parametric return distribution.
+					</p>
+
+				</div>
+
+
+				<div class="method-card">
+
+					<span>
+						Method 02
+					</span>
+
+					<h3>
+						Parametric Normal VaR
+					</h3>
+
+					<p>
+						Estimates tail risk using rolling mean and
+						volatility under a Gaussian return assumption.
+					</p>
+
+				</div>
+
+
+				<div class="method-card">
+
+					<span>
+						Method 03
+					</span>
+
+					<h3>
+						Monte Carlo VaR
+					</h3>
+
+					<p>
+						Simulates return outcomes from the rolling
+						estimated distribution and uses the simulated
+						lower-tail quantile.
+					</p>
+
+				</div>
+
+			</div>
+
+
+			<div class="definition-card">
+
+				<span>
+					Violation rule
+				</span>
+
+				<p>
+					A VaR violation is recorded whenever the realized
+					daily return falls below the forecast VaR threshold.
+				</p>
+
+			</div>
+
+
+			<div class="project-tags">
+
+				<span>Historical VaR</span>
+				<span>Parametric VaR</span>
+				<span>Monte Carlo</span>
+				<span>Rolling Windows</span>
+				<span>Tail Risk</span>
+				<span>Forecasting</span>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     07 — BACKTESTING
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			02 — Backtesting
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				Testing the forecasts
+			</p>
+
+			<h2>
+				A VaR model should fail at the right frequency.
+			</h2>
+
+			<p>
+				A risk forecast is useful only if its predicted tail
+				probability is consistent with what subsequently occurs.
+			</p>
+
+			<p>
+				The project therefore evaluates both the overall frequency
+				of violations and whether those violations behave
+				independently through time.
+			</p>
+
+
+			<div class="test-grid">
+
+				<div class="test-card">
+
+					<span>
+						Test 01
+					</span>
+
+					<h3>
+						Kupiec
+					</h3>
+
+					<p>
+						Tests unconditional coverage: whether the observed
+						VaR violation rate is consistent with the expected
+						tail probability.
+					</p>
+
+				</div>
+
+
+				<div class="test-card">
+
+					<span>
+						Test 02
+					</span>
+
+					<h3>
+						Christoffersen
+					</h3>
+
+					<p>
+						Extends the analysis by testing whether violations
+						are independent rather than clustering during
+						particular market regimes.
+					</p>
+
+				</div>
+
+			</div>
+
+
+			<div class="insight-card">
+
+				<span>
+					Why both?
+				</span>
+
+				<p>
+					A model can produce approximately the correct total
+					number of exceptions while still failing if those
+					exceptions cluster during stressed periods.
+				</p>
+
+			</div>
+
+
+			<div class="project-tags">
+
+				<span>Kupiec Test</span>
+				<span>Christoffersen Test</span>
+				<span>Coverage</span>
+				<span>Independence</span>
+				<span>Model Validation</span>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     08 — RECOVERY
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			03 — Recovery
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				Beyond loss magnitude
+			</p>
+
+			<h2>
+				Treating recovery as a duration problem.
+			</h2>
+
+			<p>
+				Once VaR violations are identified, those downside events
+				can be reorganized into event-level observations for
+				recovery analysis.
+			</p>
+
+			<p>
+				This shifts the unit of analysis from daily returns to
+				individual loss events: when the event began, the market
+				conditions surrounding it and how long recovery takes.
+			</p>
+
+
+			<div class="recovery-flow">
+
+				<div>
+
+					<span>
+						01
+					</span>
+
+					<strong>
+						Identify breach
+					</strong>
+
+					<p>
+						Locate dates where realized returns fall below
+						the VaR threshold.
+					</p>
+
+				</div>
+
+
+				<div>
+
+					<span>
+						02
+					</span>
+
+					<strong>
+						Create event
+					</strong>
+
+					<p>
+						Transform each violation into an event-level
+						observation.
+					</p>
+
+				</div>
+
+
+				<div>
+
+					<span>
+						03
+					</span>
+
+					<strong>
+						Measure duration
+					</strong>
+
+					<p>
+						Represent post-loss behavior through recovery time.
+					</p>
+
+				</div>
+
+
+				<div>
+
+					<span>
+						04
+					</span>
+
+					<strong>
+						Add stress context
+					</strong>
+
+					<p>
+						Associate market-stress information such as VIX
+						with the event.
+					</p>
+
+				</div>
+
+			</div>
+
+
+			<p class="note">
+				The current repository prepares the event-level data and
+				infrastructure required for survival-oriented recovery
+				analysis rather than treating VaR as the final endpoint.
+			</p>
+
+
+			<div class="project-tags">
+
+				<span>Survival Analysis</span>
+				<span>Duration Data</span>
+				<span>Recovery Time</span>
+				<span>Event-Level Data</span>
+				<span>VIX</span>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     09 — EMPIRICAL FINDINGS
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			Findings
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				Distribution and tail behavior
+			</p>
+
+			<h2>
+				Real returns challenge simple distributional assumptions.
+			</h2>
+
+			<p>
+				Normality diagnostics reject a Gaussian return distribution
+				for all four ETFs in the baseline analysis.
+			</p>
+
+
+			<div class="finding-list">
+
+				<div>
+
+					<span>
+						01
+					</span>
+
+					<div>
+
+						<strong>
+							SPY & VOO
+						</strong>
+
+						<p>
+							Show substantial excess kurtosis, consistent
+							with heavier tail concentration during
+							stressed periods.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div>
+
+					<span>
+						02
+					</span>
+
+					<div>
+
+						<strong>
+							QQQ
+						</strong>
+
+						<p>
+							Shows a higher violation rate under parametric
+							Normal and Monte Carlo VaR than the theoretical
+							5% baseline target.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div>
+
+					<span>
+						03
+					</span>
+
+					<div>
+
+						<strong>
+							GLD
+						</strong>
+
+						<p>
+							Rejects normality despite its different market
+							exposure, reinforcing that hedge assets should
+							not automatically be modeled as Gaussian.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div>
+
+					<span>
+						04
+					</span>
+
+					<div>
+
+						<strong>
+							VIX
+						</strong>
+
+						<p>
+							Provides a separate market-stress variable for
+							interpreting the conditions surrounding
+							violation events.
+						</p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     10 — DASHBOARDS
+	===================================================== -->
 
 	<div class="project-block">
 
@@ -106,57 +970,1598 @@ import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 
 		<div class="project-main">
 
+			<p class="eyebrow">
+				From analysis to decision support
+			</p>
+
 			<h2>
-				Analysis designed to be explored.
+				Making the risk framework explorable.
 			</h2>
 
 			<p>
-				The project also includes an interactive Streamlit
-				dashboard for exploring VaR estimates, violations,
-				backtesting results and market-stress conditions.
+				The project includes interactive and executive-facing
+				interfaces so that model behavior can be explored
+				beyond the notebook itself.
 			</p>
 
-			<p>
-				A separate Power BI dashboard provides an executive
-				view of ETF VaR breaches, severity and risk indicators.
-			</p>
 
-		</div>
+			<div class="dashboard-grid">
 
-	</div>
+				<div class="dashboard-card">
+
+					<span>
+						Interactive Analysis
+					</span>
+
+					<h3>
+						Streamlit
+					</h3>
+
+					<p>
+						Interactive controls for ticker, VaR method,
+						confidence level and date range.
+					</p>
+
+					<ul>
+						<li>VaR and return visualization</li>
+						<li>VIX overlay</li>
+						<li>Yearly violation counts</li>
+						<li>Kupiec and Christoffersen results</li>
+						<li>Survival-event CSV export</li>
+					</ul>
+
+				</div>
 
 
-	<div class="project-block">
+				<div class="dashboard-card">
 
-		<div class="project-label">
-			Project
-		</div>
+					<span>
+						Executive Reporting
+					</span>
 
-		<div class="project-main">
+					<h3>
+						Power BI
+					</h3>
 
-			<h2>
-				The Dawn of WLs.
-			</h2>
+					<p>
+						A risk-status dashboard designed for rapid
+						monitoring of ETF VaR breaches and loss behavior.
+					</p>
 
-			<p>
-				Beyond VaR is a collaborative project developed as
-				part of The Dawn of WLs.
-			</p>
+					<ul>
+						<li>Total VaR breaches</li>
+						<li>Average VaR</li>
+						<li>Average breach severity</li>
+						<li>Return-versus-VaR behavior</li>
+						<li>Breakdowns by ticker, method and year</li>
+					</ul>
 
-			<div class="project-links">
-
-				<a
-					href="https://github.com/the-dawn-of-WLs/Beyond-VaR-Modeling-Post-Loss-Recovery-Duration-with-Survival-Analysis"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					View GitHub ↗
-				</a>
+				</div>
 
 			</div>
 
 		</div>
 
 	</div>
+
+
+	<!-- =====================================================
+	     11 — PIPELINE
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			The Pipeline
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				End-to-end workflow
+			</p>
+
+			<h2>
+				From market data to recovery events.
+			</h2>
+
+
+			<div class="pipeline">
+
+				<div class="pipeline-step">
+
+					<span class="pipeline-number">
+						01
+					</span>
+
+					<div class="pipeline-content">
+
+						<h3>
+							Acquire
+						</h3>
+
+						<p>
+							Download ETF prices and VIX market-stress data.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="pipeline-step">
+
+					<span class="pipeline-number">
+						02
+					</span>
+
+					<div class="pipeline-content">
+
+						<h3>
+							Transform
+						</h3>
+
+						<p>
+							Calculate daily adjusted-close returns and
+							align the datasets.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="pipeline-step">
+
+					<span class="pipeline-number">
+						03
+					</span>
+
+					<div class="pipeline-content">
+
+						<h3>
+							Forecast
+						</h3>
+
+						<p>
+							Estimate rolling Historical, Parametric and
+							Monte Carlo VaR.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="pipeline-step">
+
+					<span class="pipeline-number">
+						04
+					</span>
+
+					<div class="pipeline-content">
+
+						<h3>
+							Backtest
+						</h3>
+
+						<p>
+							Identify violations and evaluate coverage
+							and independence.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="pipeline-step">
+
+					<span class="pipeline-number">
+						05
+					</span>
+
+					<div class="pipeline-content">
+
+						<h3>
+							Contextualize
+						</h3>
+
+						<p>
+							Connect downside events with VIX and
+							distribution diagnostics.
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="pipeline-step">
+
+					<span class="pipeline-number">
+						06
+					</span>
+
+					<div class="pipeline-content">
+
+						<h3>
+							Extend
+						</h3>
+
+						<p>
+							Prepare violation events for post-loss
+							recovery and survival analysis.
+						</p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     12 — TOOLS & METHODS
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			Tools & Methods
+		</div>
+
+		<div class="project-main">
+
+			<h2>
+				Quantitative finance meets statistical duration analysis.
+			</h2>
+
+
+			<div class="project-tags tools">
+
+				<span>Python</span>
+				<span>Pandas</span>
+				<span>NumPy</span>
+				<span>yfinance</span>
+				<span>Historical VaR</span>
+				<span>Parametric VaR</span>
+				<span>Monte Carlo</span>
+				<span>Kupiec Test</span>
+				<span>Christoffersen Test</span>
+				<span>Survival Analysis</span>
+				<span>VIX</span>
+				<span>Streamlit</span>
+				<span>Plotly</span>
+				<span>Power BI</span>
+				<span>Jupyter</span>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     13 — DELIVERABLES
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			Deliverables
+		</div>
+
+		<div class="project-main">
+
+			<p class="eyebrow">
+				Code + analysis + dashboards
+			</p>
+
+			<h2>
+				Explore the full risk framework.
+			</h2>
+
+
+			<div class="deliverable-card">
+
+				<div>
+
+					<span class="deliverable-label">
+						Project Repository
+					</span>
+
+					<h3>
+						Beyond VaR
+					</h3>
+
+					<p>
+						A framework for ETF tail-loss estimation,
+						VaR backtesting and post-loss recovery analysis.
+					</p>
+
+				</div>
+
+
+				<div class="project-links">
+
+					<a
+						href="https://github.com/the-dawn-of-WLs/Beyond-VaR-Modeling-Post-Loss-Recovery-Duration-with-Survival-Analysis"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						GitHub ↗
+					</a>
+
+					<a
+						href="https://github.com/the-dawn-of-WLs/Beyond-VaR-Modeling-Post-Loss-Recovery-Duration-with-Survival-Analysis/blob/main/notebooks/01_var_analysis_pipeline.ipynb"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						View Notebook ↗
+					</a>
+
+					<a
+						href="https://github.com/the-dawn-of-WLs/Beyond-VaR-Modeling-Post-Loss-Recovery-Duration-with-Survival-Analysis/blob/main/powerbi/beyond_var_risk_status_dashboard_page1.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Power BI Report ↗
+					</a>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     14 — TAKEAWAY
+	===================================================== -->
+
+	<div class="project-block">
+
+		<div class="project-label">
+			Takeaway
+		</div>
+
+		<div class="project-main">
+
+			<h2>
+				Risk has both magnitude and duration.
+			</h2>
+
+			<p class="lead">
+				VaR provides an important view of downside severity,
+				but it does not describe the full experience of a loss.
+			</p>
+
+			<p>
+				By connecting VaR violations with recovery events,
+				the project reframes risk as both a tail-probability
+				problem and a time-to-recovery problem.
+			</p>
+
+			<p>
+				The broader lesson is that a useful risk framework
+				should evaluate not only how severe adverse events
+				can become, but also how those events behave through
+				time and under changing market conditions.
+			</p>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     PAGE-SPECIFIC CSS
+	===================================================== -->
+
+	<style>
+
+		/* ==================================================
+		   GENERAL
+		================================================== */
+
+		.eyebrow {
+			margin:
+				0
+				0
+				20px !important;
+
+			font-size:
+				11px !important;
+
+			line-height:
+				1 !important;
+
+			letter-spacing:
+				0.12em;
+
+			text-transform:
+				uppercase;
+
+			color:
+				#666;
+		}
+
+
+		.lead {
+			max-width:
+				800px !important;
+
+			font-size:
+				21px !important;
+
+			line-height:
+				1.6 !important;
+		}
+
+
+		.note {
+			margin-top:
+				40px !important;
+
+			padding-top:
+				22px;
+
+			border-top:
+				1px solid
+				#aaa69c;
+
+			font-size:
+				13px !important;
+
+			color:
+				#666;
+		}
+
+
+		/* ==================================================
+		   BIG QUESTIONS
+		================================================== */
+
+		.question-grid {
+			display:
+				grid;
+
+			grid-template-columns:
+				repeat(
+					2,
+					minmax(0, 1fr)
+				);
+
+			gap:
+				1px;
+
+			margin-top:
+				55px;
+
+			background:
+				#aaa69c;
+
+			border:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.question-card {
+			min-height:
+				370px;
+
+			padding:
+				38px
+				35px;
+
+			background:
+				#f2f0e9;
+		}
+
+
+		.question-number {
+			display:
+				block;
+
+			margin-bottom:
+				50px;
+
+			font-size:
+				11px;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.question-card h3 {
+			max-width:
+				440px;
+
+			margin:
+				0
+				0
+				25px;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				clamp(
+					23px,
+					2vw,
+					33px
+				);
+
+			font-weight:
+				400;
+
+			line-height:
+				1.12;
+
+			letter-spacing:
+				-0.025em;
+		}
+
+
+		.question-card p {
+			max-width:
+				430px;
+
+			margin:
+				0 !important;
+
+			font-size:
+				14px !important;
+
+			line-height:
+				1.65 !important;
+		}
+
+
+		/* ==================================================
+		   RESEARCH MAP
+		================================================== */
+
+		.research-map {
+			margin-top:
+				50px;
+
+			border-top:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.map-row {
+			display:
+				grid;
+
+			grid-template-columns:
+				65px
+				1fr;
+
+			gap:
+				25px;
+
+			padding:
+				28px
+				0;
+
+			border-bottom:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.map-row > span {
+			padding-top:
+				5px;
+
+			font-size:
+				11px;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.map-row strong {
+			display:
+				block;
+
+			margin-bottom:
+				8px;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				clamp(
+					25px,
+					3vw,
+					40px
+				);
+
+			font-weight:
+				400;
+
+			line-height:
+				1;
+		}
+
+
+		.map-row p {
+			margin:
+				0 !important;
+
+			font-size:
+				14px !important;
+
+			color:
+				#555;
+		}
+
+
+		/* ==================================================
+		   ASSETS
+		================================================== */
+
+		.asset-grid {
+			display:
+				grid;
+
+			grid-template-columns:
+				repeat(
+					2,
+					minmax(0, 1fr)
+				);
+
+			gap:
+				1px;
+
+			margin-top:
+				50px;
+
+			background:
+				#aaa69c;
+
+			border:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.asset-grid > div {
+			min-height:
+				190px;
+
+			padding:
+				28px;
+
+			background:
+				#f2f0e9;
+		}
+
+
+		.asset-grid span {
+			display:
+				block;
+
+			margin-bottom:
+				35px;
+
+			font-size:
+				11px;
+
+			letter-spacing:
+				0.12em;
+
+			color:
+				#777;
+		}
+
+
+		.asset-grid strong {
+			display:
+				block;
+
+			margin-bottom:
+				12px;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				30px;
+
+			font-weight:
+				400;
+		}
+
+
+		.asset-grid p {
+			margin:
+				0 !important;
+
+			font-size:
+				13px !important;
+		}
+
+
+		/* ==================================================
+		   SETUP
+		================================================== */
+
+		.setup-grid {
+			display:
+				grid;
+
+			grid-template-columns:
+				repeat(
+					4,
+					1fr
+				);
+
+			gap:
+				1px;
+
+			margin-top:
+				25px;
+
+			background:
+				#aaa69c;
+
+			border:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.setup-grid > div {
+			min-height:
+				200px;
+
+			padding:
+				25px;
+
+			background:
+				#f2f0e9;
+		}
+
+
+		.setup-grid span {
+			display:
+				block;
+
+			margin-bottom:
+				38px;
+
+			font-size:
+				9px;
+
+			text-transform:
+				uppercase;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.setup-grid strong {
+			display:
+				block;
+
+			margin-bottom:
+				12px;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				36px;
+
+			font-weight:
+				400;
+		}
+
+
+		.setup-grid p {
+			margin:
+				0 !important;
+
+			font-size:
+				12px !important;
+
+			line-height:
+				1.55 !important;
+		}
+
+
+		/* ==================================================
+		   VaR METHODS
+		================================================== */
+
+		.method-grid {
+			display:
+				grid;
+
+			grid-template-columns:
+				repeat(
+					3,
+					1fr
+				);
+
+			gap:
+				1px;
+
+			margin-top:
+				50px;
+
+			background:
+				#aaa69c;
+
+			border:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.method-card {
+			min-height:
+				300px;
+
+			padding:
+				30px;
+
+			background:
+				#f2f0e9;
+		}
+
+
+		.method-card > span {
+			display:
+				block;
+
+			margin-bottom:
+				48px;
+
+			font-size:
+				10px;
+
+			text-transform:
+				uppercase;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.method-card h3 {
+			margin:
+				0
+				0
+				20px;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				clamp(
+					26px,
+					2.5vw,
+					38px
+				);
+
+			font-weight:
+				400;
+
+			line-height:
+				1;
+		}
+
+
+		.method-card p {
+			margin:
+				0 !important;
+
+			font-size:
+				13px !important;
+
+			line-height:
+				1.65 !important;
+		}
+
+
+		.definition-card,
+		.insight-card {
+			display:
+				grid;
+
+			grid-template-columns:
+				140px
+				1fr;
+
+			gap:
+				30px;
+
+			margin-top:
+				35px;
+
+			padding:
+				25px
+				0;
+
+			border-top:
+				1px solid
+				#aaa69c;
+
+			border-bottom:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.definition-card span,
+		.insight-card span {
+			padding-top:
+				4px;
+
+			font-size:
+				10px;
+
+			text-transform:
+				uppercase;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.definition-card p,
+		.insight-card p {
+			margin:
+				0 !important;
+
+			font-size:
+				15px !important;
+		}
+
+
+		/* ==================================================
+		   BACKTESTS
+		================================================== */
+
+		.test-grid {
+			display:
+				grid;
+
+			grid-template-columns:
+				repeat(
+					2,
+					1fr
+				);
+
+			gap:
+				16px;
+
+			margin-top:
+				50px;
+		}
+
+
+		.test-card {
+			min-height:
+				300px;
+
+			padding:
+				30px;
+
+			border:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.test-card > span {
+			display:
+				block;
+
+			margin-bottom:
+				50px;
+
+			font-size:
+				10px;
+
+			text-transform:
+				uppercase;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.test-card h3 {
+			margin:
+				0
+				0
+				20px;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				42px;
+
+			font-weight:
+				400;
+		}
+
+
+		.test-card p {
+			margin:
+				0 !important;
+
+			font-size:
+				14px !important;
+
+			line-height:
+				1.65 !important;
+		}
+
+
+		/* ==================================================
+		   RECOVERY
+		================================================== */
+
+		.recovery-flow {
+			margin-top:
+				50px;
+
+			border-top:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.recovery-flow > div {
+			display:
+				grid;
+
+			grid-template-columns:
+				55px
+				190px
+				1fr;
+
+			gap:
+				25px;
+
+			align-items:
+				baseline;
+
+			padding:
+				26px
+				0;
+
+			border-bottom:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.recovery-flow span {
+			font-size:
+				11px;
+
+			color:
+				#777;
+		}
+
+
+		.recovery-flow strong {
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				25px;
+
+			font-weight:
+				400;
+		}
+
+
+		.recovery-flow p {
+			margin:
+				0 !important;
+
+			font-size:
+				14px !important;
+		}
+
+
+		/* ==================================================
+		   FINDINGS
+		================================================== */
+
+		.finding-list {
+			margin-top:
+				50px;
+
+			border-top:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.finding-list > div {
+			display:
+				grid;
+
+			grid-template-columns:
+				55px
+				1fr;
+
+			gap:
+				25px;
+
+			padding:
+				28px
+				0;
+
+			border-bottom:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.finding-list > div > span {
+			padding-top:
+				5px;
+
+			font-size:
+				11px;
+
+			color:
+				#777;
+		}
+
+
+		.finding-list strong {
+			display:
+				block;
+
+			margin-bottom:
+				10px;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				30px;
+
+			font-weight:
+				400;
+		}
+
+
+		.finding-list p {
+			margin:
+				0 !important;
+
+			font-size:
+				14px !important;
+		}
+
+
+		/* ==================================================
+		   DASHBOARDS
+		================================================== */
+
+		.dashboard-grid {
+			display:
+				grid;
+
+			grid-template-columns:
+				repeat(
+					2,
+					minmax(0, 1fr)
+				);
+
+			gap:
+				16px;
+
+			margin-top:
+				50px;
+		}
+
+
+		.dashboard-card {
+			padding:
+				32px;
+
+			border:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.dashboard-card > span {
+			display:
+				block;
+
+			margin-bottom:
+				50px;
+
+			font-size:
+				10px;
+
+			text-transform:
+				uppercase;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.dashboard-card h3 {
+			margin:
+				0
+				0
+				20px;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				42px;
+
+			font-weight:
+				400;
+		}
+
+
+		.dashboard-card p {
+			margin:
+				0 !important;
+
+			font-size:
+				14px !important;
+		}
+
+
+		.dashboard-card ul {
+			margin-top:
+				25px !important;
+
+			font-size:
+				13px !important;
+		}
+
+
+		/* ==================================================
+		   PIPELINE
+		================================================== */
+
+		.pipeline {
+			margin-top:
+				55px;
+
+			border-top:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.pipeline-step {
+			display:
+				grid;
+
+			grid-template-columns:
+				55px
+				1fr;
+
+			gap:
+				28px;
+
+			padding:
+				29px
+				0;
+
+			border-bottom:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.pipeline-number {
+			padding-top:
+				6px;
+
+			font-size:
+				11px;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.pipeline-content {
+			display:
+				grid;
+
+			grid-template-columns:
+				180px
+				1fr;
+
+			gap:
+				40px;
+
+			align-items:
+				baseline;
+		}
+
+
+		.pipeline-content h3 {
+			margin:
+				0;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				28px;
+
+			font-weight:
+				400;
+
+			line-height:
+				1;
+
+			letter-spacing:
+				-0.025em;
+		}
+
+
+		.pipeline-content p {
+			max-width:
+				520px;
+
+			margin:
+				0 !important;
+
+			font-size:
+				15px !important;
+
+			line-height:
+				1.6 !important;
+
+			color:
+				#333;
+		}
+
+
+		/* ==================================================
+		   DELIVERABLES
+		================================================== */
+
+		.deliverable-card {
+			margin-top:
+				45px;
+
+			padding:
+				32px;
+
+			border:
+				1px solid
+				#aaa69c;
+		}
+
+
+		.deliverable-label {
+			display:
+				block;
+
+			margin-bottom:
+				18px;
+
+			font-size:
+				10px;
+
+			text-transform:
+				uppercase;
+
+			letter-spacing:
+				0.1em;
+
+			color:
+				#777;
+		}
+
+
+		.deliverable-card h3 {
+			margin:
+				0
+				0
+				18px;
+
+			font-family:
+				Georgia,
+				"Times New Roman",
+				serif;
+
+			font-size:
+				clamp(
+					28px,
+					3vw,
+					42px
+				);
+
+			font-weight:
+				400;
+		}
+
+
+		.deliverable-card p {
+			margin:
+				0 !important;
+
+			font-size:
+				14px !important;
+		}
+
+
+		.tools {
+			max-width:
+				950px;
+		}
+
+
+		/* ==================================================
+		   MOBILE
+		================================================== */
+
+		@media (max-width: 800px) {
+
+			.question-grid,
+			.asset-grid,
+			.method-grid,
+			.test-grid,
+			.dashboard-grid {
+				grid-template-columns:
+					1fr;
+			}
+
+
+			.setup-grid {
+				grid-template-columns:
+					repeat(
+						2,
+						1fr
+					);
+			}
+
+
+			.question-card {
+				min-height:
+					auto;
+			}
+
+
+			.definition-card,
+			.insight-card {
+				grid-template-columns:
+					1fr;
+
+				gap:
+					12px;
+			}
+
+
+			.recovery-flow > div {
+				grid-template-columns:
+					40px
+					1fr;
+
+				gap:
+					15px;
+			}
+
+
+			.recovery-flow p {
+				grid-column:
+					2;
+			}
+
+
+			.pipeline-step {
+				grid-template-columns:
+					35px
+					1fr;
+
+				gap:
+					15px;
+			}
+
+
+			.pipeline-content {
+				grid-template-columns:
+					1fr;
+
+				gap:
+					10px;
+			}
+
+
+			.pipeline-content h3 {
+				font-size:
+					24px;
+			}
+
+		}
+
+
+		@media (max-width: 520px) {
+
+			.setup-grid {
+				grid-template-columns:
+					1fr;
+			}
+
+		}
+
+	</style>
 
 </ProjectLayout>
