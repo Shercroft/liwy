@@ -17,7 +17,7 @@ const base = import.meta.env.BASE_URL;
 	<body>
 
 		<header class="navbar">
-			<a class="logo" href="/">WEIYOU LI</a>
+			<a class="logo" href={base}>WEIYOU LI</a>
 
 			<nav>
 				<a href="#about">About</a>
@@ -85,12 +85,20 @@ const base = import.meta.env.BASE_URL;
 					<div class="about-text">
 						<p>
 							My work and interests span mathematics, statistics, machine learning, research, photography, and writing.
-							
 						</p>
 
 						<p>
 							I’m drawn to both technical and creative pursuits, and to the different perspectives they offer.
 						</p>
+
+						<a
+							class="resume-link"
+							href={`${base}update_resume.pdf`}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Resume / CV ↗
+						</a>
 					</div>
 
 				</div>
@@ -575,6 +583,25 @@ const base = import.meta.env.BASE_URL;
 		line-height: 1.6;
 
 		max-width: 430px;
+	}
+
+	.resume-link {
+		display: inline-block;
+
+		margin-top: 24px;
+
+		padding-bottom: 3px;
+
+		border-bottom: 1px solid #111;
+
+		font-size: 15px;
+
+		transition:
+			opacity 0.2s ease;
+	}
+
+	.resume-link:hover {
+		opacity: 0.45;
 	}
 
 
